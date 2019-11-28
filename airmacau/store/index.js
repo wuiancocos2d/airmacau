@@ -15,8 +15,10 @@ const store = new Vuex.Store({
 		hasLogin: false,
 		userName: ""
 	},
-	actions,
-	mutations
+	actions:actions,
+	mutations:mutations
 })
+
+export default store
 
 

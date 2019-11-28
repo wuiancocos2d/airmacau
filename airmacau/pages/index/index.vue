@@ -10,21 +10,18 @@
 	} from 'vuex'
 	export default {
 		computed: mapState(['hasLogin']),
-		onLoad() {
-			console.log('login',this.hasLogin)
-			if(!this.hasLogin) {
-				uni.reLaunch({
-					url: '../login/login'
-				})
-			}
-		},
 		data() {
 			return {
 				
 			}
 		},
 		onLoad() {
-
+			console.log('login log',this.hasLogin)
+			if(!this.hasLogin) {
+				uni.reLaunch({
+					url: '../login/login'
+				})
+			}
 		},
 		methods: {
 

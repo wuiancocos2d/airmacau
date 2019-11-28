@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "登陆",
+  "usingComponents": {
+    "van-button": "/wxcomponents/dist/button/index",
+    "i-input": "/components/input/i-input"
+  }
+}

@@ -1,0 +1,1 @@
+<view class="i-input-view"><input class="i-input-input" type="{{type}}" placeholder="{{placeholder}}" value="{{value}}"/></view>

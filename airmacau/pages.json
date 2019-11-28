@@ -10,7 +10,11 @@
 		{
 			"path":"pages/login/login",
 			"style": {
-				"navigationStyle":"custom"
+				"navigationStyle":"custom",
+				"navigationBarTitleText":"登陆",
+				 "usingComponents": {
+				    "van-button": "/wxcomponents/dist/button/index"
+				 }
 			}
 		}
 	],
