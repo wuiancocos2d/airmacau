@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		
+		<i-apis></i-apis>
 	</view>
 </template>
 
@@ -8,16 +8,19 @@
 	import {
 		mapState
 	} from 'vuex'
+	import iApis from '../../components/apis/i-apis.vue'
 	export default {
 		computed: mapState(['hasLogin']),
+		components: {
+			iApis
+		},
 		data() {
 			return {
-				
+
 			}
 		},
 		onLoad() {
-			console.log('login log',this.hasLogin)
-			if(!this.hasLogin) {
+			if (!this.hasLogin) {
 				uni.reLaunch({
 					url: '../login/login'
 				})
@@ -33,11 +36,7 @@
 	.content {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		
 		width: 100vw;
 		height: 100vh;
 	}
-
 </style>

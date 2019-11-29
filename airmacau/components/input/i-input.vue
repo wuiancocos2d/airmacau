@@ -1,6 +1,6 @@
 <template>
 	<view class="i-input-view">
-		<input class="i-input-input" :type="type" :value="value" :placeholder="placeholder"/>
+		<input class="i-input-input" :type="type" :value="value" :placeholder="placeholder" @input="onInput" />
 	</view>
 </template>
 
@@ -43,6 +43,11 @@
 				type: [Boolean, String],
 				default: false
 			}
+		},
+		methods: {
+			onInput(e) {
+				this.$emit('input', e.target.value)
+			}
 		}
 	}
 </script>
@@ -56,6 +61,7 @@
 		padding: 0 10rpx;
 		font-size: 35rpx;
 		line-height: 48px;
+
 		.i-input-input {
 			flex: 1;
 			width: 100%;

@@ -8415,7 +8415,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "Airmacau" }, "pages/login/login": { "navigationStyle": "custom", "navigationBarTitleText": "登陆" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#2D2F55", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "Airmacau" }, "pages/login/login": { "navigationStyle": "custom", "navigationBarTitleText": "登陆" }, "pages/flights/flights": { "navigationStyle": "default", "navigationBarTitleText": "Flights" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#2D2F55", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -8563,7 +8563,7 @@ var store = new _vuex.default.Store({
             */
     forcedLogin: false,
     hasLogin: false,
-    userName: "" },
+    userInfo: {} },
 
   actions: _action.default,
   mutations: _mutations.default });var _default =
@@ -9541,7 +9541,863 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {};exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var types = _interopRequireWildcard(__webpack_require__(/*! ./mutation-types.js */ 19));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default = _defineProperty({},
+
+types.USER_LOGIN, function (state, user) {
+  state.userInfo = user;
+  state.hasLogin = true;
+});exports.default = _default;
+
+/***/ }),
+/* 19 */
+/*!********************************************************!*\
+  !*** D:/VPJ/airmacau/airmacau/store/mutation-types.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.USER_LOGOUT = exports.USER_LOGIN = void 0;var USER_LOGIN = 'USER_LOGIN';exports.USER_LOGIN = USER_LOGIN;
+var USER_LOGOUT = 'USER_LOGOUT';exports.USER_LOGOUT = USER_LOGOUT;
+
+/***/ }),
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */
+/*!***********************************************!*\
+  !*** D:/VPJ/airmacau/airmacau/api/userAPI.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _index = _interopRequireDefault(__webpack_require__(/*! ../js_sdk/pocky-request/index */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+
+{
+  loginUser: function loginUser(user) {
+    return (0, _index.default)().post('/api/login', {
+      data: user });
+
+  } };exports.default = _default;
+
+/***/ }),
+/* 35 */
+/*!**************************************************************!*\
+  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/index.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+var _index = _interopRequireDefault(__webpack_require__(/*! ./core/index */ 36));
+var _tools = _interopRequireDefault(__webpack_require__(/*! ./tools */ 39));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /*
+                                                                                                                                                       * @Description: uniapp request请求库 v2.0.4
+                                                                                                                                                       * @Author: pocky
+                                                                                                                                                       * @Email 2460392754@qq.com
+                                                                                                                                                       * @Date: 2019-05-31 19:18:48
+                                                                                                                                                       * @LastEditTime: 2019-11-01 14:32:42
+                                                                                                                                                       * @instruction: https://www.yuque.com/pocky/aaeyux/pdik23
+                                                                                                                                                       * @github: https://github.com/2460392754/uniapp-tools/tree/master/request
+                                                                                                                                                       * @dcloud: https://ext.dcloud.net.cn/plugin?id=468
+                                                                                                                                                       */function createInstance() {var ctx = new _index.default();var instance;instance = _index.default.prototype.request.bind(ctx);instance = _tools.default.extend(instance, _index.default.prototype, ctx);instance = _tools.default.extend(instance, ctx);
+  return instance;
+}
+
+function create() {
+  return createInstance();
+}var _default =
+
+create;exports.default = _default;
+
+/***/ }),
+/* 36 */
+/*!*******************************************************************!*\
+  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/index.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _interceptor = _interopRequireDefault(__webpack_require__(/*! ./interceptor */ 37));
+var _mergeConfig = _interopRequireDefault(__webpack_require__(/*! ./mergeConfig */ 38));
+var _tools = _interopRequireDefault(__webpack_require__(/*! ../tools */ 39));
+var Network = _interopRequireWildcard(__webpack_require__(/*! ./network */ 40));
+var _config = __webpack_require__(/*! ../config */ 41);function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
+
+function MyRequest() {
+  this.defaultConfig = _config.config;
+  this.interceptors = {
+    scoped: {
+      request: new _interceptor.default(),
+      response: new _interceptor.default() },
+
+    global: _config.globalInterceptor };
+
+}
+
+/**
+   * 通用请求
+   * 支持请求格式 `request('example/url'[, config])`
+   * @param {Object} config [{}] 配置信息
+   */
+MyRequest.prototype.request = function () {var _this = this;var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  if (typeof config === 'string') {
+    config = arguments[1] || {};
+    config.url = arguments[0];
+  }
+
+  // 设置默认 config.method
+  if (!config.method && !this.defaultConfig.method) {
+    config.method = 'get';
+  }
+
+  var method = config.method = config.method.toLowerCase();
+  var newConfig = (0, _mergeConfig.default)(this.defaultConfig, config);
+  var networkType = ['upload', 'download'].includes(method) ? method : 'xhr';
+
+  var chain = [];
+  var promise = Promise.resolve(newConfig);
+
+  this.interceptors.global.request.forEach(function (interceptor) {
+    chain.push({ then: interceptor.fulfilled }, { catch: interceptor.rejected });
+  });
+
+  this.interceptors.scoped.request.forEach(function (interceptor) {
+    chain.push({ then: interceptor.fulfilled }, { catch: interceptor.rejected });
+  });
+
+  chain.push({ then: Network[networkType] });
+
+  this.interceptors.global.response.forEach(function (interceptor) {
+    chain.push({ then: interceptor.fulfilled }, { catch: interceptor.rejected });
+  });
+
+  this.interceptors.scoped.response.forEach(function (interceptor) {
+    chain.push({ then: interceptor.fulfilled }, { catch: interceptor.rejected });
+  });
+
+  /**
+       * 链式合并
+       * 合并顺序格式
+       * 没有就会跳过
+       *
+       * ``` javascript
+       * Promise.resolve()
+       * .then(global_Request)
+       * .catch(global_Request)
+       * .then(scoped_Request)
+       * .catch(scoped_Request)
+       * .then(发送请求)
+       * .catch(请求错误、超时) // 好像会自动抛出
+       * .then(global_Response)
+       * .catch(global_Response)
+       * .then(scoped_Response)
+       * .catch(scoped_Response)
+       * .then(获取请求的返回值)
+       * .catch(拦截异常的返回值)
+       * ```
+       */
+  chain.forEach(function (item) {var _Object$entries =
+    Object.entries(item),_Object$entries2 = _slicedToArray(_Object$entries, 1),_Object$entries2$ = _slicedToArray(_Object$entries2[0], 2),type = _Object$entries2$[0],fn = _Object$entries2$[1];
+
+    if (typeof fn !== 'function') {
+      return true;
+    }
+
+    promise = promise[type](function (obj) {
+      var interceptorConfig = (0, _mergeConfig.default)(_this.defaultConfig, config);
+
+      var ret = fn(obj, interceptorConfig);
+
+      // return false 就会跳出promise的链式函数
+      if (ret === false) {
+        return _tools.default.breakPromise();
+      }
+
+      // return config(Object类型) 或 return Promise.reject('xx') 才会继续发送请求或回传数据
+      if (_tools.default.isType('Object', ret) || _tools.default.isType('Promise', ret)) {
+        return ret;
+      }
+    });
+  });
+
+  return promise;
+};
+
+// 在 MyRequest 的原型上添加其他方法
+[
+'get',
+'post',
+'put',
+'delete',
+'connect',
+'head',
+'options',
+'trace',
+'upload',
+'download'].
+forEach(function (method) {
+  MyRequest.prototype[method] = function (url) {var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var newConfig = _tools.default.deepCopy(config, {
+      url: url,
+      method: method });
+
+
+    return this.request(newConfig);
+  };
+});
+
+// 中断 发送中的请求
+MyRequest.prototype.abort = function (instance) {
+  try {
+    instance.example.abort();
+  } catch (e) {}
+};var _default =
+
+MyRequest;exports.default = _default;
+
+/***/ }),
+/* 37 */
+/*!*************************************************************************!*\
+  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/interceptor.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} // 拦截器
+var Interceptor = /*#__PURE__*/function () {
+  function Interceptor() {_classCallCheck(this, Interceptor);
+    this.handlers = [];
+  }
+
+  /**
+     * 添加 拦截器
+     * @param {Function} fulfilled Promise.resolve里运行的函数
+     * @param {Function} rejected  Promise.reject里运行的函数
+     * @return {Number} 拦截器队列中注册的下标id
+     */_createClass(Interceptor, [{ key: "use", value: function use(
+    fulfilled, rejected) {
+      this.handlers.push({
+        fulfilled: fulfilled,
+        rejected: rejected });
+
+
+      return this.handlers.length - 1;
+    }
+
+    /**
+       * 注销 拦截器
+       * @param {Number} id 在拦截器队列中的下标id
+       */ }, { key: "eject", value: function eject(
+    id) {
+      this.handlers[id] && (this.handlers[id] = null);
+    }
+
+    /**
+       * 遍历所有的拦截器
+       * @param {Function} fn 
+       */ }, { key: "forEach", value: function forEach(
+    fn) {
+      this.handlers.forEach(function (item) {
+        item && fn(item);
+      });
+    } }]);return Interceptor;}();var _default =
+
+
+Interceptor;exports.default = _default;
+
+/***/ }),
+/* 38 */
+/*!*************************************************************************!*\
+  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/mergeConfig.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _tools = _interopRequireDefault(__webpack_require__(/*! ../tools */ 39));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}
+
+function mergeConfig(defaultConfig) {var instanceConfig = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var CONFIG_KEY_LIST = ['url', 'method', 'data', 'dataType', 'responseType', 'params'];
+  var CONFIG_MERGE_DEEP_KEY_LIST = ['header'];
+  var CONFIG_OPTIONAL_KEY_LIST = ['baseURL'];
+  var CONFIG_ALL_KEY_LIST = [].concat(
+  CONFIG_KEY_LIST,
+  CONFIG_MERGE_DEEP_KEY_LIST,
+  CONFIG_OPTIONAL_KEY_LIST);
+
+  var ARGS_ALL_KEY_LIST = _toConsumableArray(
+  new Set([].concat(_toConsumableArray(Object.keys(instanceConfig)), _toConsumableArray(Object.keys(defaultConfig)))));
+
+  var REMAINDER_KEY_LIST = ARGS_ALL_KEY_LIST.filter(
+  function (key) {return !CONFIG_ALL_KEY_LIST.includes(key);});
+
+  var newConfig = {};
+
+  // 必要参数
+  CONFIG_KEY_LIST.forEach(function (prop) {
+    var val = instanceConfig[prop] || defaultConfig[prop];
+
+    !_tools.default.isType('Undefined', val) && (newConfig[prop] = val);
+  });
+
+  // 必要深拷贝参数
+  CONFIG_MERGE_DEEP_KEY_LIST.forEach(function (prop) {
+    var defaultVal = defaultConfig[prop];
+    var instanceVal = instanceConfig[prop];
+
+    if (_tools.default.isType('Object', instanceVal)) {
+      newConfig[prop] = _tools.default.deepCopy(defaultVal, instanceVal);
+    } else if (_tools.default.isType('Object', defaultVal)) {
+      newConfig[prop] = _tools.default.deepCopy(defaultVal);
+    }
+  });
+
+  // 配置文件中可选参数
+  CONFIG_OPTIONAL_KEY_LIST.forEach(function (prop) {
+    var val = defaultConfig[prop];
+
+    if (!_tools.default.isType('Undefined', val)) {
+      newConfig[prop] = defaultConfig[prop];
+    }
+  });
+
+  // 合并未出现在上述列表中的参数
+  REMAINDER_KEY_LIST.forEach(function (prop) {
+    var defaultVal = defaultConfig[prop];
+    var instanceVal = instanceConfig[prop];
+
+    if (!_tools.default.isType('Undefined', instanceVal)) {
+      newConfig[prop] = instanceVal;
+    } else if (!_tools.default.isType('Undefined', defaultVal)) {
+      newConfig[prop] = defaultVal;
+    }
+  });
+
+  newConfig.instanceURL = instanceConfig.url;
+  newConfig.url = _tools.default.getFullURL(newConfig.baseURL, newConfig.url);
+  newConfig.url = _tools.default.paramsToURL(newConfig);
+  newConfig.header = _tools.default.adapterContentType(
+  defaultConfig.header,
+  instanceConfig.header,
+  newConfig.header);
+
+
+  // 删除 method为upload时，默认的content-type
+  if (newConfig.method === 'upload') {
+    delete newConfig.header['content-type'];
+  }
+
+  return newConfig;
+}var _default =
+
+mergeConfig;exports.default = _default;
+
+/***/ }),
+/* 39 */
+/*!**************************************************************!*\
+  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/tools.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}var $ = {};
+
+/**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * 类型判断
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * @param {String} type 值的类型
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * @param {Any} val 需要判断的值
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * @return {Boolean}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */
+$.isType = function (type, val) {
+  return Object.prototype.toString.call(val) === "[object ".concat(type, "]");
+};
+
+/**
+    * 简单对象的深拷贝
+    * @param {Array<Any>} args 参数列表
+    * @return {Object<Any>}
+    */
+$.deepCopy = function () {
+  var res = {};for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}
+
+  args.forEach(function (arg) {
+    for (var key in arg) {
+      res = assginValue(key, arg[key], res, $.deepCopy);
+    }
+  });
+
+  return res;
+};
+
+var assginValue = function assginValue(key, val, container, callback) {
+  var cTypeIsObj = $.isType('Object', container[key]);
+  var vTypeIsObj = $.isType('Object', val);
+
+  if (cTypeIsObj && vTypeIsObj) {
+    container[key] = callback(container[key], val);
+  } else if (vTypeIsObj) {
+    container[key] = callback({}, val);
+  } else {
+    container[key] = val;
+  }
+
+  return container;
+};
+
+/**
+    * 扩展对象的属性或方法
+    * @param {Object} target 需要扩展的对象
+    * @param {Object} obj 被拷贝对象
+    * @param {Object} args 扩展函数继承的对象
+    * @return {Object}
+    */
+$.extend = function (target, obj, args) {
+  for (var key in obj) {
+    var val = obj[key];
+
+    if (args && $.isType('Function', val)) {
+      target[key] = val.bind(args);
+    } else {
+      target[key] = val;
+    }
+  }
+
+  return target;
+};
+
+/**
+    * 获取完整的URL
+    * @param {String|Undefined} baseURL 基地址
+    * @param {String} requestURL 相对地址
+    * @return {String}
+    */
+$.getFullURL = function (baseURL, requestURL) {
+  if (baseURL && !isAbsoluteURL(requestURL)) {
+    return composeURL(baseURL, requestURL);
+  }
+
+  return requestURL;
+};
+
+/**
+    * 组合成绝对地址的 URL (基地址+相对地址)
+    * @param {String} baseURL 基地址
+    * @param {String} relativeURL 相对地址
+    * @return {String}
+    */
+var composeURL = function composeURL(baseURL, relativeURL) {
+  return relativeURL ?
+  baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '') :
+  baseURL;
+};
+
+/**
+    * 判断是否是绝对地址 (有 `://`或 `//` 就算是绝对地址)
+    * @param {String} url
+    * @return {Boolean}
+    */
+var isAbsoluteURL = function isAbsoluteURL(url) {
+  return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
+};
+
+/**
+    * url添加params参数
+    * @param {Object} o config
+    * @param {String} o.url
+    * @param {String} o.method
+    * @param {Object} o.data
+    * @param {Object} o.params
+    * @return {String}
+    */
+$.paramsToURL = function (_ref) {var url = _ref.url,method = _ref.method,data = _ref.data,params = _ref.params;
+  var newParams = params;
+  var newURL = url + (!~url.indexOf('?') ? '?' : '&');
+
+  if (method.toLowerCase() === 'get') {
+    newParams = data || params;
+  }var _arr =
+
+  Object.entries(newParams || {});for (var _i = 0; _i < _arr.length; _i++) {var _arr$_i = _slicedToArray(_arr[_i], 2),key = _arr$_i[0],val = _arr$_i[1];
+    newURL += "".concat(key, "=").concat(val, "&");
+  }
+
+  return newURL.substring(0, newURL.length - 1);
+};
+
+/**
+    * `content-type` 适配器
+    * @param {Object} defaultHeader [{}]
+    * @param {Object} instanceHeader [{}]
+    * @param {Object} configHeader
+    * @return {Object}
+    */
+$.adapterContentType = function () {var defaultHeader = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};var instanceHeader = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var configHeader = arguments.length > 2 ? arguments[2] : undefined;
+  var LIST = ['content-type', 'Content-type', 'Content-Type', 'contentType', 'ContentType'];
+  var newConfigHeader = $.deepCopy(configHeader);
+  var val;var _arr2 =
+
+  Object.keys(defaultHeader);for (var _i2 = 0; _i2 < _arr2.length; _i2++) {var KEY = _arr2[_i2];
+    if (LIST.includes(KEY)) {
+      val = defaultHeader[KEY];
+      delete newConfigHeader[KEY];
+      break;
+    }
+  }var _arr3 =
+
+  Object.keys(instanceHeader);for (var _i3 = 0; _i3 < _arr3.length; _i3++) {var _KEY = _arr3[_i3];
+    if (LIST.includes(_KEY)) {
+      val = instanceHeader[_KEY];
+      delete newConfigHeader[_KEY];
+      break;
+    }
+  }
+
+  val && (newConfigHeader['content-type'] = val);
+
+  return newConfigHeader;
+};
+
+// 停止promise的链式操作
+$.breakPromise = function () {
+  return new Promise(function () {});
+};
+
+// 转换为 JSON 格式
+$.toJSON = function (anyVal) {
+  try {
+    return JSON.parse(anyVal);
+  } catch (e) {
+    return anyVal;
+  }
+};
+
+// 删除 url 上的参数
+// $.delURLQueryString = function (url) {
+//     return url.replace(/\?[\S|\s]+/, '');
+// }
+var _default =
+$;exports.default = _default;
+
+/***/ }),
+/* 40 */
+/*!*********************************************************************!*\
+  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/network.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.download = exports.upload = exports.xhr = void 0;var _tools = _interopRequireDefault(__webpack_require__(/*! ../tools */ 39));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+// 普通请求
+var xhr = function xhr(config) {
+  var promise, instance;
+
+  promise = new Promise(function (resolve, reject) {
+    instance = uni.request(_objectSpread({},
+    config, {
+      success: resolve,
+      fail: reject }));
+
+  });
+
+  promise.__proto__.example = instance;
+
+  return promise;
+};
+
+// 上传
+exports.xhr = xhr;var upload = function upload(config) {
+  var promise, instance;
+
+  promise = new Promise(function (resolve, reject) {
+    instance = uni.uploadFile(_objectSpread({},
+    config, {
+      success: function success(res) {
+        res.data = _tools.default.toJSON(res.data);
+
+        resolve(res);
+      },
+      fail: reject }));
+
+
+    addTask(config, instance);
+  });
+
+  promise.__proto__.example = instance; // 使用 `Object.setProrotypeOf` 会修改自己的隐性原型，把 `Promise` 重新指向成 `Object`
+
+  return promise;
+};
+
+// 下载
+exports.upload = upload;var download = function download(config) {
+  var promise, instance;
+
+  promise = new Promise(function (resolve, reject) {
+    instance = uni.downloadFile(_objectSpread({},
+    config, {
+      success: resolve,
+      fail: reject }));
+
+
+    addTask(config, instance);
+  });
+
+  promise.__proto__.example = instance;
+
+  return promise;
+};exports.download = download;
+
+function addTask(config, instance) {
+  var taskList = [
+  'onProgressUpdate',
+  'onHeadersReceived',
+  'offProgressUpdate',
+  'offHeadersReceived'];
+
+
+  taskList.forEach(function (task) {
+    var callback = config[task];
+
+    typeof callback === 'function' && instance[task](callback);
+  });
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 41 */
+/*!***************************************************************!*\
+  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/config.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.config = exports.globalInterceptor = void 0;var _interceptor = _interopRequireDefault(__webpack_require__(/*! ./core/interceptor */ 37));
+var _index = _interopRequireDefault(__webpack_require__(/*! ./index */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var globalInterceptor = {
+  request: new _interceptor.default(),
+  response: new _interceptor.default() };
+
+
+/**
+                                           * 全局配置
+                                           * 只能配置 静态数据
+                                           * `content-type` 默认为 application/json
+                                           * `header` 中`content-type`设置特殊参数 或 配置其他会导致触发 跨域 问题，出现跨域会直接进入响应拦截器的catch函数中
+                                           */exports.globalInterceptor = globalInterceptor;
+var config = {
+  baseURL: "https://www.fastmock.site/mock/764b2f2ce8e45de1f04944f04d69a84f/wexin",
+  header: {
+    // 'X-Auth-Token': 'xxxx',
+    contentType: "application/x-www-form-urlencoded"
+    // 'Content-Type': 'application/json'
+  } };
+
+
+/**
+        * 全局 请求拦截器, 支持添加多个拦截器
+        * 例如: 配置token、添加一些默认的参数
+        *
+        * `return config` 继续发送请求
+        * `return false` 会停止发送请求，不会进入错误数据拦截，也不会进入请求对象中的catch函数中
+        * `return Promise.reject('xxxxx')` 停止发送请求, 会错误数据拦截，也会进入catch函数中
+        *
+        * @param {Object} config 发送请求的配置数据
+        */exports.config = config;
+globalInterceptor.request.use(
+function (config) {
+  console.log("is global request interceptor");
+
+  return config;
+},
+function (err) {
+  console.error("is global fail request interceptor: ", err);
+  return false;
+});
+
+
+/**
+     * 全局 响应拦截器, 支持添加多个拦截器
+     * 例如: 根据状态码选择性拦截、过滤转换数据
+     *
+     * `return res` 继续返回数据
+     * `return false` 停止返回数据，不会进入错误数据拦截，也不会进入catch函数中
+     * `return Promise.reject('xxxxx')` 返回错误信息, 会错误数据拦截，也会进入catch函数中
+     *
+     * @param {Object} res 请求返回的数据
+     * @param {Object} config 发送请求的配置数据
+     * @return {Object|Boolean|Promise<reject>}
+     */
+globalInterceptor.response.use(
+function (res, config) {
+  return res;
+},
+function (err, config) {
+  console.error("is global response fail interceptor");
+  console.error("err: ", err);
+  console.error("config: ", config);
+
+  return Promise.reject(err);
+});
+
+/***/ }),
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */
+/*!**************************************************************!*\
+  !*** D:/VPJ/airmacau/airmacau/components/uni-icons/icons.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  'contact': "\uE100",
+  'person': "\uE101",
+  'personadd': "\uE102",
+  'contact-filled': "\uE130",
+  'person-filled': "\uE131",
+  'personadd-filled': "\uE132",
+  'phone': "\uE200",
+  'email': "\uE201",
+  'chatbubble': "\uE202",
+  'chatboxes': "\uE203",
+  'phone-filled': "\uE230",
+  'email-filled': "\uE231",
+  'chatbubble-filled': "\uE232",
+  'chatboxes-filled': "\uE233",
+  'weibo': "\uE260",
+  'weixin': "\uE261",
+  'pengyouquan': "\uE262",
+  'chat': "\uE263",
+  'qq': "\uE264",
+  'videocam': "\uE300",
+  'camera': "\uE301",
+  'mic': "\uE302",
+  'location': "\uE303",
+  'mic-filled': "\uE332",
+  'speech': "\uE332",
+  'location-filled': "\uE333",
+  'micoff': "\uE360",
+  'image': "\uE363",
+  'map': "\uE364",
+  'compose': "\uE400",
+  'trash': "\uE401",
+  'upload': "\uE402",
+  'download': "\uE403",
+  'close': "\uE404",
+  'redo': "\uE405",
+  'undo': "\uE406",
+  'refresh': "\uE407",
+  'star': "\uE408",
+  'plus': "\uE409",
+  'minus': "\uE410",
+  'circle': "\uE411",
+  'checkbox': "\uE411",
+  'close-filled': "\uE434",
+  'clear': "\uE434",
+  'refresh-filled': "\uE437",
+  'star-filled': "\uE438",
+  'plus-filled': "\uE439",
+  'minus-filled': "\uE440",
+  'circle-filled': "\uE441",
+  'checkbox-filled': "\uE442",
+  'closeempty': "\uE460",
+  'refreshempty': "\uE461",
+  'reload': "\uE462",
+  'starhalf': "\uE463",
+  'spinner': "\uE464",
+  'spinner-cycle': "\uE465",
+  'search': "\uE466",
+  'plusempty': "\uE468",
+  'forward': "\uE470",
+  'back': "\uE471",
+  'left-nav': "\uE471",
+  'checkmarkempty': "\uE472",
+  'home': "\uE500",
+  'navigate': "\uE501",
+  'gear': "\uE502",
+  'paperplane': "\uE503",
+  'info': "\uE504",
+  'help': "\uE505",
+  'locked': "\uE506",
+  'more': "\uE507",
+  'flag': "\uE508",
+  'home-filled': "\uE530",
+  'gear-filled': "\uE532",
+  'info-filled': "\uE534",
+  'help-filled': "\uE535",
+  'more-filled': "\uE537",
+  'settings': "\uE560",
+  'list': "\uE562",
+  'bars': "\uE563",
+  'loop': "\uE565",
+  'paperclip': "\uE567",
+  'eye': "\uE568",
+  'arrowup': "\uE580",
+  'arrowdown': "\uE581",
+  'arrowleft': "\uE582",
+  'arrowright': "\uE583",
+  'arrowthinup': "\uE584",
+  'arrowthindown': "\uE585",
+  'arrowthinleft': "\uE586",
+  'arrowthinright': "\uE587",
+  'pulldown': "\uE588",
+  'closefill': "\uE589",
+  'sound': "\uE590",
+  'scan': "\uE612" };exports.default = _default;
 
 /***/ })
 ]]);

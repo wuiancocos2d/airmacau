@@ -13,7 +13,7 @@ const store = new Vuex.Store({
 		 */
 		forcedLogin: false,
 		hasLogin: false,
-		userName: ""
+		userInfo: {}
 	},
 	actions:actions,
 	mutations:mutations

@@ -11,10 +11,14 @@
 			"path":"pages/login/login",
 			"style": {
 				"navigationStyle":"custom",
-				"navigationBarTitleText":"登陆",
-				 "usingComponents": {
-				    "van-button": "/wxcomponents/dist/button/index"
-				 }
+				"navigationBarTitleText":"登陆"
+			}
+		},
+		{
+			"path": "pages/flights/flights",
+			"style": {
+				"navigationStyle":"default",
+				"navigationBarTitleText":"Flights"
 			}
 		}
 	],
