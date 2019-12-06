@@ -1,1 +1,1 @@
-<view class="flight-content"></view>
+<view class="flight-content data-v-5c789c0f"><view class="searchForm data-v-5c789c0f"><view class="row data-v-5c789c0f"><ipt-grp vue-id="1" labelNm="Flight Number" class="data-v-5c789c0f" bind:__l="__l" vue-slots="{{['default']}}"><input type="text" class="data-v-5c789c0f"/></ipt-grp></view><view class="row data-v-5c789c0f"></view></view></view>

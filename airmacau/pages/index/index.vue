@@ -20,11 +20,11 @@
 			}
 		},
 		onLoad() {
-			if (!this.hasLogin) {
-				uni.reLaunch({
-					url: '../login/login'
-				})
-			}
+			// if (!this.hasLogin) {
+			// 	uni.reLaunch({
+			// 		url: '../login/login'
+			// 	})
+			// }
 		},
 		methods: {
 

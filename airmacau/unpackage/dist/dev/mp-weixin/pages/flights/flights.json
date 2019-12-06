@@ -1,5 +1,7 @@
 {
   "navigationStyle": "default",
   "navigationBarTitleText": "Flights",
-  "usingComponents": {}
+  "usingComponents": {
+    "ipt-grp": "/components/iptGrp/iptGrp"
+  }
 }

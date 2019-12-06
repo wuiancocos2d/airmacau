@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/flights/flights",
     "pages/index/index",
-    "pages/login/login",
-    "pages/flights/flights"
+    "pages/login/login"
   ],
   "subPackages": [],
   "window": {

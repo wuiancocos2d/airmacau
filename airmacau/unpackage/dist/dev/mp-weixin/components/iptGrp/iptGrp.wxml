@@ -1,0 +1,1 @@
+<view class="iptGrp"><view class="iptLabel"><label for="label">{{labelNm}}</label></view><view class="i-input-view"><slot></slot></view></view>

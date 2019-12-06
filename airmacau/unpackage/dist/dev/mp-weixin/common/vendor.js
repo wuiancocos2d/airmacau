@@ -8415,7 +8415,7 @@ module.exports = {"_from":"@dcloudio/uni-stat@next","_id":"@dcloudio/uni-stat@2.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/index/index": { "navigationBarTitleText": "Airmacau" }, "pages/login/login": { "navigationStyle": "custom", "navigationBarTitleText": "登陆" }, "pages/flights/flights": { "navigationStyle": "default", "navigationBarTitleText": "Flights" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#2D2F55", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/flights/flights": { "navigationStyle": "default", "navigationBarTitleText": "Flights" }, "pages/index/index": { "navigationBarTitleText": "Airmacau" }, "pages/login/login": { "navigationStyle": "custom", "navigationBarTitleText": "登陆" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#2D2F55", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 /* 8 */
@@ -9576,7 +9576,15 @@ var USER_LOGOUT = 'USER_LOGOUT';exports.USER_LOGOUT = USER_LOGOUT;
 /* 31 */,
 /* 32 */,
 /* 33 */,
-/* 34 */
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */
 /*!***********************************************!*\
   !*** D:/VPJ/airmacau/airmacau/api/userAPI.js ***!
   \***********************************************/
@@ -9584,7 +9592,7 @@ var USER_LOGOUT = 'USER_LOGOUT';exports.USER_LOGOUT = USER_LOGOUT;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _index = _interopRequireDefault(__webpack_require__(/*! ../js_sdk/pocky-request/index */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _index = _interopRequireDefault(__webpack_require__(/*! ../js_sdk/pocky-request/index */ 43));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 
 {
   loginUser: function loginUser(user) {
@@ -9594,7 +9602,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   } };exports.default = _default;
 
 /***/ }),
-/* 35 */
+/* 43 */
 /*!**************************************************************!*\
   !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/index.js ***!
   \**************************************************************/
@@ -9613,8 +9621,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _index = _interopRequireDefault(__webpack_require__(/*! ./core/index */ 36));
-var _tools = _interopRequireDefault(__webpack_require__(/*! ./tools */ 39));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /*
+var _index = _interopRequireDefault(__webpack_require__(/*! ./core/index */ 44));
+var _tools = _interopRequireDefault(__webpack_require__(/*! ./tools */ 47));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /*
                                                                                                                                                        * @Description: uniapp request请求库 v2.0.4
                                                                                                                                                        * @Author: pocky
                                                                                                                                                        * @Email 2460392754@qq.com
@@ -9634,7 +9642,7 @@ function create() {
 create;exports.default = _default;
 
 /***/ }),
-/* 36 */
+/* 44 */
 /*!*******************************************************************!*\
   !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/index.js ***!
   \*******************************************************************/
@@ -9642,11 +9650,11 @@ create;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _interceptor = _interopRequireDefault(__webpack_require__(/*! ./interceptor */ 37));
-var _mergeConfig = _interopRequireDefault(__webpack_require__(/*! ./mergeConfig */ 38));
-var _tools = _interopRequireDefault(__webpack_require__(/*! ../tools */ 39));
-var Network = _interopRequireWildcard(__webpack_require__(/*! ./network */ 40));
-var _config = __webpack_require__(/*! ../config */ 41);function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _interceptor = _interopRequireDefault(__webpack_require__(/*! ./interceptor */ 45));
+var _mergeConfig = _interopRequireDefault(__webpack_require__(/*! ./mergeConfig */ 46));
+var _tools = _interopRequireDefault(__webpack_require__(/*! ../tools */ 47));
+var Network = _interopRequireWildcard(__webpack_require__(/*! ./network */ 48));
+var _config = __webpack_require__(/*! ../config */ 49);function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
 
 function MyRequest() {
   this.defaultConfig = _config.config;
@@ -9781,7 +9789,7 @@ MyRequest.prototype.abort = function (instance) {
 MyRequest;exports.default = _default;
 
 /***/ }),
-/* 37 */
+/* 45 */
 /*!*************************************************************************!*\
   !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/interceptor.js ***!
   \*************************************************************************/
@@ -9832,7 +9840,7 @@ var Interceptor = /*#__PURE__*/function () {
 Interceptor;exports.default = _default;
 
 /***/ }),
-/* 38 */
+/* 46 */
 /*!*************************************************************************!*\
   !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/mergeConfig.js ***!
   \*************************************************************************/
@@ -9840,7 +9848,7 @@ Interceptor;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _tools = _interopRequireDefault(__webpack_require__(/*! ../tools */ 39));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _tools = _interopRequireDefault(__webpack_require__(/*! ../tools */ 47));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}
 
 function mergeConfig(defaultConfig) {var instanceConfig = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var CONFIG_KEY_LIST = ['url', 'method', 'data', 'dataType', 'responseType', 'params'];
@@ -9919,7 +9927,7 @@ function mergeConfig(defaultConfig) {var instanceConfig = arguments.length > 1 &
 mergeConfig;exports.default = _default;
 
 /***/ }),
-/* 39 */
+/* 47 */
 /*!**************************************************************!*\
   !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/tools.js ***!
   \**************************************************************/
@@ -10106,7 +10114,7 @@ var _default =
 $;exports.default = _default;
 
 /***/ }),
-/* 40 */
+/* 48 */
 /*!*********************************************************************!*\
   !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/network.js ***!
   \*********************************************************************/
@@ -10114,7 +10122,7 @@ $;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.download = exports.upload = exports.xhr = void 0;var _tools = _interopRequireDefault(__webpack_require__(/*! ../tools */ 39));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.download = exports.upload = exports.xhr = void 0;var _tools = _interopRequireDefault(__webpack_require__(/*! ../tools */ 47));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 // 普通请求
 var xhr = function xhr(config) {
@@ -10192,7 +10200,7 @@ function addTask(config, instance) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 41 */
+/* 49 */
 /*!***************************************************************!*\
   !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/config.js ***!
   \***************************************************************/
@@ -10200,8 +10208,8 @@ function addTask(config, instance) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.config = exports.globalInterceptor = void 0;var _interceptor = _interopRequireDefault(__webpack_require__(/*! ./core/interceptor */ 37));
-var _index = _interopRequireDefault(__webpack_require__(/*! ./index */ 35));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.config = exports.globalInterceptor = void 0;var _interceptor = _interopRequireDefault(__webpack_require__(/*! ./core/interceptor */ 45));
+var _index = _interopRequireDefault(__webpack_require__(/*! ./index */ 43));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var globalInterceptor = {
   request: new _interceptor.default(),
@@ -10270,14 +10278,6 @@ function (err, config) {
 });
 
 /***/ }),
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
 /* 50 */,
 /* 51 */,
 /* 52 */,
@@ -10295,7 +10295,16 @@ function (err, config) {
 /* 64 */,
 /* 65 */,
 /* 66 */,
-/* 67 */
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */
 /*!**************************************************************!*\
   !*** D:/VPJ/airmacau/airmacau/components/uni-icons/icons.js ***!
   \**************************************************************/
