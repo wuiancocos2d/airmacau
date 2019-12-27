@@ -1,7 +1,7 @@
 <template>
 	<view class="iptGrp">
 		<view class="iptLabel">
-			<label for="label">{{labelNm}}</label>
+			<label class="labelCls" for="label">{{labelNm}}</label>
 		</view>
 		<view class="i-input-view">
 			<slot ></slot>
@@ -29,5 +29,15 @@
 		}
 	}
 </script>
-<style>
+<style lang="scss" scoped>
+	.iptGrp {
+		padding: 0 20rpx;
+		.iptLabel {
+			.labelCls {
+				color:#8E8E8E;
+				font-size: 25rpx;
+				font-weight: bold;
+			}
+		}
+	}
 </style>

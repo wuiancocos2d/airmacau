@@ -1,0 +1,1 @@
+<view class="IButton data-v-76c14392"><button data-event-opts="{{[['tap',[['handleClick',['$event']]]]]}}" class="{{['ibtn data-v-76c14392',(type==='primary')?'primary':'',(type==='company')?'company':'']}}" bindtap="__e"><slot></slot></button></view>

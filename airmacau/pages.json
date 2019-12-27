@@ -1,17 +1,24 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/flights/flights",
-			"style": {
-				"navigationStyle":"default",
-				"navigationBarTitleText":"Flights"
-			}
-		},
-		{
 			"path": "pages/index/index",
 			"style": {
 				// "navigationStyle":"custom",
 				"navigationBarTitleText": "Airmacau"
+			}
+		},
+		{
+		    "path" : "pages/flightSearch/flightSearch",
+		    "style" : {
+				"navigationStyle":"default",
+				"navigationBarTitleText": "Flight search"
+			}
+		},
+		{
+			"path": "pages/flights/flights",
+			"style": {
+				"navigationStyle":"default",
+				"navigationBarTitleText":"Flights"
 			}
 		},
 		{
@@ -22,11 +29,12 @@
 			}
 		}
 		
-	],
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#2D2F55",
 		"backgroundColor": "#F8F8F8"
+		
 	}
 }

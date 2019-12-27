@@ -1,5 +1,10 @@
 {
   "navigationStyle": "default",
   "navigationBarTitleText": "Flights",
-  "usingComponents": {}
+  "usingComponents": {
+    "ipt-grp": "/components/iptGrp/iptGrp",
+    "i-input": "/components/input/i-input",
+    "uni-calendar": "/components/uni-calendar/uni-calendar",
+    "i-button": "/components/buttons/i-buttons"
+  }
 }

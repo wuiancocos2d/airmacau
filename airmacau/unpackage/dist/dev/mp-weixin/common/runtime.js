@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/apis/i-apis":1,"components/input/i-input":1,"components/uni-icons/uni-icons":1,"components/uni-grid-item/uni-grid-item":1,"components/uni-grid/uni-grid":1,"components/uni-badge/uni-badge":1};
+/******/ 		var cssChunks = {"components/apis/i-apis":1,"components/uni-calendar/uni-calendar":1,"components/buttons/i-buttons":1,"components/input/i-input":1,"components/iptGrp/iptGrp":1,"components/uni-icons/uni-icons":1,"components/uni-grid-item/uni-grid-item":1,"components/uni-grid/uni-grid":1,"components/uni-calendar/uni-calendar-item":1,"components/uni-badge/uni-badge":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/iptGrp/iptGrp":"components/iptGrp/iptGrp","components/apis/i-apis":"components/apis/i-apis","components/input/i-input":"components/input/i-input","components/uni-icons/uni-icons":"components/uni-icons/uni-icons","components/uni-grid-item/uni-grid-item":"components/uni-grid-item/uni-grid-item","components/uni-grid/uni-grid":"components/uni-grid/uni-grid","components/uni-badge/uni-badge":"components/uni-badge/uni-badge"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/apis/i-apis":"components/apis/i-apis","components/uni-calendar/uni-calendar":"components/uni-calendar/uni-calendar","components/buttons/i-buttons":"components/buttons/i-buttons","components/input/i-input":"components/input/i-input","components/iptGrp/iptGrp":"components/iptGrp/iptGrp","components/uni-icons/uni-icons":"components/uni-icons/uni-icons","components/uni-grid-item/uni-grid-item":"components/uni-grid-item/uni-grid-item","components/uni-grid/uni-grid":"components/uni-grid/uni-grid","components/uni-calendar/uni-calendar-item":"components/uni-calendar/uni-calendar-item","components/uni-badge/uni-badge":"components/uni-badge/uni-badge"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

@@ -1,0 +1,1 @@
+<view class="iptGrp data-v-c038b1c6"><view class="iptLabel data-v-c038b1c6"><label class="labelCls data-v-c038b1c6" for="label">{{labelNm}}</label></view><view class="i-input-view data-v-c038b1c6"><slot></slot></view></view>

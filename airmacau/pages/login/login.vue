@@ -54,15 +54,17 @@
 					'username': this.usrnm,
 					'password': this.pswd
 				}
-				UserAPI.loginUser(user).then(res => {
-					if(res.data && res.data.code === "200") {
-						this.USER_LOGIN(user)
-						this.toMain()
-					}
-				}).catch(err=> {
-					console.error('is catch user login',err)
-					this.errMsg = err
-				})
+				// UserAPI.loginUser(user).then(res => {
+				// 	if(res.data && res.data.code === "200") {
+				// 		this.USER_LOGIN(user)
+				// 		this.toMain()
+				// 	}
+				// }).catch(err=> {
+				// 	console.error('is catch user login',err)
+				// 	this.errMsg = err
+				// })
+				this.USER_LOGIN(user)
+				this.toMain()
 			},
 			toMain() {
 				uni.reLaunch({

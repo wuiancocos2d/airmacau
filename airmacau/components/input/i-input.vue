@@ -1,6 +1,6 @@
 <template>
 	<view class="i-input-view">
-		<input class="i-input-input" :type="type" :value="value" :placeholder="placeholder" @input="onInput" />
+		<input class="i-input-input" :type="type" :value="value" :placeholder="placeholder" @input="onInput" @focus="onFocus" />
 	</view>
 </template>
 
@@ -45,6 +45,9 @@
 			}
 		},
 		methods: {
+			onFocus() {
+				this.$emit('focus')
+			},
 			onInput(e) {
 				this.$emit('input', e.target.value)
 			}
@@ -58,19 +61,31 @@
 		flex-direction: row;
 		align-items: center;
 		flex: 1;
-		padding: 0 10rpx;
 		font-size: 35rpx;
 		line-height: 48px;
 
 		.i-input-input {
-			flex: 1;
-			width: 100%;
-			border: none;
-			margin-top: 60rpx;
-			padding: 5px 15px;
 			box-sizing: border-box;
-			height: 60rpx;
-			border-bottom: 1rpx solid #C8C7CC;
+			margin: 0;
+			padding: 0;
+			font-variant: tabular-nums;
+			list-style: none;
+			font-feature-settings: 'tnum';
+			position: relative;
+			display: inline-block;
+			width: 100%;
+			height: 32px;
+			padding: 4px 11px;
+			color: #3A3A3F;
+			font-size: 14px;
+			line-height: 1.5;
+			background-color: #fff;
+			background-image: none;
+			border: 1px solid #ECECEC;
+			border-radius: 4px;
+			font-weight: bold;
+			transition: all 0.3s;
+			
 		}
 	}
 </style>

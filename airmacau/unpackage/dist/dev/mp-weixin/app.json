@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/flights/flights",
     "pages/index/index",
+    "pages/flightSearch/flightSearch",
+    "pages/flights/flights",
     "pages/login/login"
   ],
   "subPackages": [],
@@ -11,5 +12,6 @@
     "navigationBarBackgroundColor": "#2D2F55",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap41.json"
 }

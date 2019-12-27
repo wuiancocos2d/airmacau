@@ -1,1 +1,1 @@
-<view class="i-input-view"><input class="i-input-input" type="{{type}}" placeholder="{{placeholder}}" data-event-opts="{{[['input',[['onInput',['$event']]]]]}}" value="{{value}}" bindinput="__e"/></view>
+<view class="i-input-view"><input class="i-input-input" type="{{type}}" placeholder="{{placeholder}}" data-event-opts="{{[['input',[['onInput',['$event']]]],['focus',[['onFocus',['$event']]]]]}}" value="{{value}}" bindinput="__e" bindfocus="__e"/></view>
