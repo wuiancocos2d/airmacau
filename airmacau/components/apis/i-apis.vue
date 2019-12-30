@@ -1,7 +1,7 @@
 <template>
 	<view class="apis-container">
-		<uni-grid :column="5">
-			<uni-grid-item v-for="(item,index) in apis" :key="index" @tap="toUrl(item.url)">
+		<uni-grid :column="3" :showBorder="false">
+			<uni-grid-item class="icon-container" v-for="(item,index) in apis" :key="index" @tap="toUrl(item.url)">
 				<view class="icon">
 					<uni-icons :type="item.icon" size="30" :color="'#513C8A'" ></uni-icons>
 				</view>
@@ -35,7 +35,11 @@
 					{
 						"name": "Tele",
 						"icon": "contact"
-
+					},
+					{
+						"name": 'ACARS',
+						"icon": 'map',
+						"url": "/pages/acars/acars"
 					}
 				]
 			}
@@ -50,8 +54,11 @@
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.apis-container {
 		width: 100vw;
+		.icon-container {
+			text-align: center;
+		}
 	}
 </style>

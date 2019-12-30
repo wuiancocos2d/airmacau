@@ -24,42 +24,8 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.background.data-v-5c789c0f {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
+#acars-container .acarsmap.data-v-28629c49 {
   width: 100%;
-}
-.background .background-image.data-v-5c789c0f {
-    width: 100%;
-    height: auto;
-    min-height: 200rpx;
-}
-.searchForm .row.data-v-5c789c0f {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row;
-  -webkit-flex-wrap: nowrap;
-          flex-wrap: nowrap;
-  margin-top: 45rpx;
-}
-.searchForm .row.submitRow.data-v-5c789c0f {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-            justify-content: center;
-    text-align: center;
-    margin-top: 65rpx;
-}
-.searchForm .row .iptGrp.data-v-5c789c0f {
-    box-sizing: border-box;
-    width: 49.9%;
-    padding: 0 25rpx;
+  height: 80vh;
 }
 

@@ -35,32 +35,27 @@ form {
 .uni-flex {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 }
 .uni-flex-item {
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 }
 .uni-row {
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 }
 .uni-column {
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
 .uni-link {
@@ -73,16 +68,13 @@ form {
 .uni-inline-item {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 }
 .uni-inline-item text {
@@ -104,15 +96,13 @@ form {
 	height: 88rpx;
 	line-height: 88rpx;
 	color: #BEBEBE;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	border-bottom: 2rpx solid #D8D8D8;
 }
 .uni-page-body {
 	width: 100%;
 	-webkit-box-flex: 1;
 	-webkit-flex-grow: 1;
-	    -ms-flex-positive: 1;
 	        flex-grow: 1;
 	overflow-x: hidden;
 }
@@ -200,8 +190,7 @@ form {
 .uni-ellipsis {
 	overflow: hidden;
 	white-space: nowrap;
-	-o-text-overflow: ellipsis;
-	   text-overflow: ellipsis;
+	text-overflow: ellipsis;
 }
 /* 竖向百分百按钮 */
 .uni-btn-v {
@@ -214,7 +203,6 @@ form {
 .uni-form-item {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	padding: 10rpx 0;
@@ -236,7 +224,6 @@ form {
 	background: #FFF;
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 }
 radio-group,
@@ -250,10 +237,8 @@ checkbox-group label {
 .uni-form-item .with-fun {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-flex-wrap: nowrap;
-	    -ms-flex-wrap: nowrap;
 	        flex-wrap: nowrap;
 	background: #FFFFFF;
 }
@@ -262,7 +247,6 @@ checkbox-group label {
 	height: 80rpx;
 	line-height: 80rpx;
 	-webkit-flex-shrink: 0;
-	    -ms-flex-negative: 0;
 	        flex-shrink: 0;
 }
 /* loadmore */
@@ -353,8 +337,7 @@ checkbox-group label {
 	border-radius: 8rpx;
 	margin: 20rpx 0;
 	position: relative;
-	-webkit-box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, .3);
-	        box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, .3);
+	box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, .3);
 }
 .uni-card-content {
 	font-size: 30rpx;
@@ -372,17 +355,14 @@ checkbox-group label {
 	position: relative;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	min-height: 50rpx;
 	padding: 20rpx 30rpx;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 }
 .uni-card-header {
@@ -400,8 +380,7 @@ checkbox-group label {
 	height: 2rpx;
 	content: '';
 	-webkit-transform: scaleY(.5);
-	-ms-transform: scaleY(.5);
-	    transform: scaleY(.5);
+	transform: scaleY(.5);
 	background-color: #c8c7cc;
 }
 .uni-card-header:after {
@@ -411,7 +390,6 @@ checkbox-group label {
 .uni-card-media {
 	-webkit-box-pack: start;
 	-webkit-justify-content: flex-start;
-	    -ms-flex-pack: start;
 	        justify-content: flex-start;
 }
 .uni-card-media-logo {
@@ -423,20 +401,16 @@ checkbox-group label {
 	height: 84rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	-webkit-box-align: start;
 	-webkit-align-items: flex-start;
-	    -ms-flex-align: start;
 	        align-items: flex-start;
 }
 .uni-card-media-text-top {
@@ -458,12 +432,10 @@ checkbox-group label {
 	width: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
 .uni-list:after {
@@ -475,8 +447,7 @@ checkbox-group label {
 	height: 1px;
 	content: '';
 	-webkit-transform: scaleY(.5);
-	-ms-transform: scaleY(.5);
-	    transform: scaleY(.5);
+	transform: scaleY(.5);
 	background-color: #c8c7cc;
 }
 .uni-list::before {
@@ -488,28 +459,23 @@ checkbox-group label {
 	height: 1px;
 	content: '';
 	-webkit-transform: scaleY(.5);
-	-ms-transform: scaleY(.5);
-	    transform: scaleY(.5);
+	transform: scaleY(.5);
 	background-color: #c8c7cc;
 }
 .uni-list-cell {
 	position: relative;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 }
 .uni-list-cell-hover {
@@ -526,7 +492,6 @@ checkbox-group label {
 .uni-list-cell-right {
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 }
 .uni-list-cell::after {
@@ -538,8 +503,7 @@ checkbox-group label {
 	height: 1px;
 	content: '';
 	-webkit-transform: scaleY(.5);
-	-ms-transform: scaleY(.5);
-	    transform: scaleY(.5);
+	transform: scaleY(.5);
 	background-color: #c8c7cc;
 }
 .uni-list .uni-list-cell:last-child::after {
@@ -552,7 +516,6 @@ checkbox-group label {
 	position: relative;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	color: #999;
 	background-color: #f7f7f7;
@@ -566,8 +529,7 @@ checkbox-group label {
 	height: 1px;
 	content: '';
 	-webkit-transform: scaleY(.5);
-	-ms-transform: scaleY(.5);
-	    transform: scaleY(.5);
+	transform: scaleY(.5);
 	background-color: #c8c7cc;
 }
 .uni-list-cell-divider::after {
@@ -578,8 +540,7 @@ checkbox-group label {
 	height: 1px;
 	content: '';
 	-webkit-transform: scaleY(.5);
-	-ms-transform: scaleY(.5);
-	    transform: scaleY(.5);
+	transform: scaleY(.5);
 	background-color: #c8c7cc;
 }
 .uni-list-cell-navigate {
@@ -589,22 +550,17 @@ checkbox-group label {
 	position: relative;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	width: 100%;
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 }
 .uni-list-cell-navigate {
@@ -621,8 +577,7 @@ checkbox-group label {
 	top: 50%;
 	color: #bbb;
 	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	    transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 .uni-list-cell-navigate.uni-navigate-bottom:after {
 	font-family: uniicons;
@@ -632,8 +587,7 @@ checkbox-group label {
 	top: 50%;
 	color: #bbb;
 	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	    transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 .uni-list-cell-navigate.uni-navigate-bottom.uni-active::after {
 	font-family: uniicons;
@@ -643,22 +597,19 @@ checkbox-group label {
 	top: 50%;
 	color: #bbb;
 	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	    transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 .uni-collapse.uni-list-cell {
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
 .uni-list-cell-navigate.uni-active {
 	background: #eee;
 }
 .uni-list.uni-collapse {
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	height: 0;
 	overflow: hidden;
 }
@@ -675,19 +626,15 @@ checkbox-group label {
 .uni-triplex-row {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 	width: 100%;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	padding: 22rpx 30rpx;
 }
@@ -695,12 +642,10 @@ checkbox-group label {
 .uni-triplex-left {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
 .uni-triplex-left {
@@ -720,17 +665,14 @@ checkbox-group label {
 /* 图文列表 */
 .uni-media-list {
 	padding: 22rpx 30rpx;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 }
 .uni-navigate-right.uni-media-list {
@@ -740,7 +682,6 @@ checkbox-group label {
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: reverse;
 	-webkit-flex-direction: row-reverse;
-	    -ms-flex-direction: row-reverse;
 	        flex-direction: row-reverse;
 }
 .uni-pull-right>.uni-media-list-logo {
@@ -760,24 +701,19 @@ checkbox-group label {
 	height: 84rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	-webkit-box-align: start;
 	-webkit-align-items: flex-start;
-	    -ms-flex-align: start;
 	        align-items: flex-start;
 	overflow: hidden;
 }
@@ -798,15 +734,12 @@ checkbox-group label {
 	width: 750rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	-webkit-flex-wrap: wrap;
-	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
 	border-top: 2rpx solid #eee;
 }
@@ -815,26 +748,21 @@ checkbox-group label {
 	height: 200rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	border-bottom: 2rpx solid;
 	border-right: 2rpx solid;
 	border-color: #eee;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 }
 .no-border-right {
 	border-right: none;
@@ -857,27 +785,22 @@ checkbox-group label {
 .uni-uploader {
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
 .uni-uploader-head {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 }
 .uni-uploader-info {
@@ -889,15 +812,12 @@ checkbox-group label {
 .uni-uploader__files {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	-webkit-flex-wrap: wrap;
-	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
 }
 .uni-uploader__file {
@@ -924,8 +844,7 @@ checkbox-group label {
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	    transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 	background-color: #D9D9D9;
 }
 .uni-uploader__input-box:before {
@@ -956,20 +875,16 @@ checkbox-group label {
 .feedback-title {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 	padding: 20rpx;
 	color: #8f8f94;
@@ -978,7 +893,6 @@ checkbox-group label {
 .feedback-star-view.feedback-title {
 	-webkit-box-pack: start;
 	-webkit-justify-content: flex-start;
-	    -ms-flex-pack: start;
 	        justify-content: flex-start;
 	margin: 0;
 }
@@ -995,8 +909,7 @@ checkbox-group label {
 	top: 50%;
 	color: #bbb;
 	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	    transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 .feedback-body {
 	background: #fff;
@@ -1006,8 +919,7 @@ checkbox-group label {
 	font-size: 34rpx;
 	line-height: 50rpx;
 	width: 100%;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	padding: 20rpx 30rpx 0;
 }
 .feedback-input {
@@ -1057,7 +969,6 @@ checkbox-group label {
 	height: 2rpx;
 	content: '';
 	-webkit-transform: scaleY(.5);
-	    -ms-transform: scaleY(.5);
 	        transform: scaleY(.5);
 	background-color: #c8c7cc;
 }
@@ -1069,7 +980,6 @@ checkbox-group label {
 	height: 2rpx;
 	content: '';
 	-webkit-transform: scaleY(.5);
-	    -ms-transform: scaleY(.5);
 	        transform: scaleY(.5);
 	background-color: #c8c7cc;
 }
@@ -1077,18 +987,15 @@ checkbox-group label {
 	position: relative;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	font-size: 28rpx;
 	padding: 22rpx 30rpx;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 }
 .uni-input-group .uni-input-row:after {
@@ -1099,7 +1006,6 @@ checkbox-group label {
 	height: 2rpx;
 	content: '';
 	-webkit-transform: scaleY(.5);
-	    -ms-transform: scaleY(.5);
 	        transform: scaleY(.5);
 	background-color: #c8c7cc;
 }
@@ -1122,16 +1028,13 @@ checkbox-group label {
 .uni-tab-bar {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 	overflow: hidden;
 	height: 100%;
@@ -1160,7 +1063,6 @@ checkbox-group label {
 .uni-tab-bar .swiper-box {
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
-	    -ms-flex: 1;
 	        flex: 1;
 	width: 100%;
 	height: calc(100% - 100rpx);
@@ -1173,28 +1075,23 @@ checkbox-group label {
 	padding: 5rpx 0;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-flex: 1;
 	-webkit-flex-grow: 1;
-	    -ms-flex-positive: 1;
 	        flex-grow: 1;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
 .uni-comment-list {
 	-webkit-flex-wrap: nowrap;
-	    -ms-flex-wrap: nowrap;
 	        flex-wrap: nowrap;
 	padding: 10rpx 0;
 	margin: 10rpx 0;
 	width: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 }
 .uni-comment-face {
@@ -1203,7 +1100,6 @@ checkbox-group label {
 	border-radius: 100%;
 	margin-right: 20rpx;
 	-webkit-flex-shrink: 0;
-	    -ms-flex-negative: 0;
 	        flex-shrink: 0;
 	overflow: hidden;
 }
@@ -1218,7 +1114,6 @@ checkbox-group label {
 	line-height: 1.5em;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 }
 .uni-comment-top text {
@@ -1230,19 +1125,15 @@ checkbox-group label {
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	display: -webkit-box !important;
 	display: -webkit-flex !important;
-	display: -ms-flexbox !important;
 	display: flex !important;
 	-webkit-box-flex: 1;
 	-webkit-flex-grow: 1;
-	    -ms-flex-positive: 1;
 	        flex-grow: 1;
 }
 .uni-comment-date view {
@@ -1269,11 +1160,9 @@ checkbox-group label {
 	width: 100%;
 	padding: 12rpx 0;
 	-webkit-flex-wrap: nowrap;
-	    -ms-flex-wrap: nowrap;
 	        flex-wrap: nowrap;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 }
 .uni-swiper-msg-icon {
@@ -1283,7 +1172,6 @@ checkbox-group label {
 .uni-swiper-msg-icon image {
 	width: 100%;
 	-webkit-flex-shrink: 0;
-	    -ms-flex-negative: 0;
 	        flex-shrink: 0;
 }
 .uni-swiper-msg swiper {
@@ -1297,28 +1185,23 @@ checkbox-group label {
 .uni-product-list {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	-webkit-flex-wrap: wrap;
-	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 }
 .uni-product {
 	padding: 20rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
 .image-view {
@@ -1336,8 +1219,7 @@ checkbox-group label {
 	display: -webkit-box;
 	overflow: hidden;
 	line-height: 1.5;
-	-o-text-overflow: ellipsis;
-	   text-overflow: ellipsis;
+	text-overflow: ellipsis;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2;
 }
@@ -1368,45 +1250,37 @@ checkbox-group label {
 	margin: 35rpx 0;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 	position: relative;
 }
 .uni-timeline-item {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	position: relative;
 	padding-bottom: 20rpx;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	overflow: hidden;
 }
 .uni-timeline-item .uni-timeline-item-keynode {
 	width: 160rpx;
 	-webkit-flex-shrink: 0;
-	    -ms-flex-negative: 0;
 	        flex-shrink: 0;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	padding-right: 20rpx;
 	text-align: right;
 	line-height: 65rpx;
 }
 .uni-timeline-item .uni-timeline-item-divider {
 	-webkit-flex-shrink: 0;
-	    -ms-flex-negative: 0;
 	        flex-shrink: 0;
 	position: relative;
 	width: 30rpx;
@@ -1736,15 +1610,12 @@ checkbox-group label {
 	height: 110rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	position: relative;
 }
@@ -1765,7 +1636,6 @@ checkbox-group label {
 	top: 50%;
 	left: 0;
 	-webkit-transform: translateY(50%);
-	    -ms-transform: translateY(50%);
 	        transform: translateY(50%);
 }
 
