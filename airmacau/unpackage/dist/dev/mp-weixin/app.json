@@ -13,5 +13,10 @@
     "navigationBarBackgroundColor": "#2D2F55",
     "backgroundColor": "#F8F8F8"
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "定位权限"
+    }
+  },
   "usingComponents": {}
 }

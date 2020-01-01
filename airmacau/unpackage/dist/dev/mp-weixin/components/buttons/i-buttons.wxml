@@ -1,1 +1,1 @@
-<view class="IButton data-v-86b2447a"><button data-event-opts="{{[['tap',[['handleClick',['$event']]]]]}}" class="{{['ibtn data-v-86b2447a',(type==='primary')?'primary':'',(type==='company')?'company':'']}}" bindtap="__e"><slot></slot></button></view>
+<view class="IButton data-v-219a062c"><button data-event-opts="{{[['tap',[['handleClick',['$event']]]]]}}" class="{{['ibtn data-v-219a062c',(type==='primary')?'primary':'',(type==='company')?'company':'']}}" bindtap="__e"><slot></slot></button></view>

@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.ibtn.data-v-86b2447a {
+.ibtn.data-v-219a062c {
   text-align: center;
   font-size: 28rpx;
   font-weight: bold;
@@ -47,11 +47,11 @@
   padding: 15rpx 35rpx;
   border-radius: 4px;
 }
-.ibtn.primary.data-v-86b2447a {
+.ibtn.primary.data-v-219a062c {
     background-color: #007AFF;
     color: #F8F8F8;
 }
-.ibtn.company.data-v-86b2447a {
+.ibtn.company.data-v-219a062c {
     background: #FFFFFF;
     color: #513C8A;
     border: 1rpx solid #513C8A;

@@ -734,7 +734,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1529,9 +1529,9 @@ uni$1;exports.default = _default;
 /***/ }),
 
 /***/ 101:
-/*!****************************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/components/uni-calendar/util.js ***!
-  \****************************************************************/
+/*!*****************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/components/uni-calendar/util.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1867,9 +1867,9 @@ Calendar;exports.default = _default;
 /***/ }),
 
 /***/ 102:
-/*!********************************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/components/uni-calendar/calendar.js ***!
-  \********************************************************************/
+/*!*********************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/components/uni-calendar/calendar.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2424,9 +2424,9 @@ calendar;exports.default = _default;
 /***/ }),
 
 /***/ 110:
-/*!**************************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/components/uni-icons/icons.js ***!
-  \**************************************************************/
+/*!***************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/components/uni-icons/icons.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2637,9 +2637,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 15:
-/*!***********************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/store/index.js ***!
-  \***********************************************/
+/*!************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/store/index.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3621,9 +3621,9 @@ var index_esm = {
 /***/ }),
 
 /***/ 17:
-/*!************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/store/action.js ***!
-  \************************************************/
+/*!*************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/store/action.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3633,9 +3633,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 18:
-/*!***************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/store/mutations.js ***!
-  \***************************************************/
+/*!****************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/store/mutations.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3651,9 +3651,9 @@ types.USER_LOGIN, function (state, user) {
 /***/ }),
 
 /***/ 19:
-/*!********************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/store/mutation-types.js ***!
-  \********************************************************/
+/*!*********************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/store/mutation-types.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9145,7 +9145,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -9166,14 +9166,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -9249,7 +9249,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -9658,9 +9658,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 4:
-/*!*******************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/pages.json ***!
-  \*******************************************/
+/*!********************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/pages.json ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10557,9 +10557,9 @@ main();
 /***/ }),
 
 /***/ 58:
-/*!***********************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/api/userAPI.js ***!
-  \***********************************************/
+/*!************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/api/userAPI.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10576,9 +10576,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 59:
-/*!**************************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/index.js ***!
-  \**************************************************************/
+/*!***************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/js_sdk/pocky-request/index.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10628,9 +10628,9 @@ module.exports = {"_from":"@dcloudio/uni-stat@^2.0.0-alpha-24420191128001","_id"
 /***/ }),
 
 /***/ 60:
-/*!*******************************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/index.js ***!
-  \*******************************************************************/
+/*!********************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/js_sdk/pocky-request/core/index.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10776,9 +10776,9 @@ MyRequest;exports.default = _default;
 /***/ }),
 
 /***/ 61:
-/*!*************************************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/interceptor.js ***!
-  \*************************************************************************/
+/*!**************************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/js_sdk/pocky-request/core/interceptor.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10828,9 +10828,9 @@ Interceptor;exports.default = _default;
 /***/ }),
 
 /***/ 62:
-/*!*************************************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/mergeConfig.js ***!
-  \*************************************************************************/
+/*!**************************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/js_sdk/pocky-request/core/mergeConfig.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10916,9 +10916,9 @@ mergeConfig;exports.default = _default;
 /***/ }),
 
 /***/ 63:
-/*!**************************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/tools.js ***!
-  \**************************************************************/
+/*!***************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/js_sdk/pocky-request/tools.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11104,9 +11104,9 @@ $;exports.default = _default;
 /***/ }),
 
 /***/ 64:
-/*!*********************************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/core/network.js ***!
-  \*********************************************************************/
+/*!**********************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/js_sdk/pocky-request/core/network.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11191,9 +11191,9 @@ function addTask(config, instance) {
 /***/ }),
 
 /***/ 65:
-/*!***************************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/js_sdk/pocky-request/config.js ***!
-  \***************************************************************/
+/*!****************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/js_sdk/pocky-request/config.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11270,21 +11270,21 @@ function (err, config) {
 /***/ }),
 
 /***/ 7:
-/*!************************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/pages.json?{"type":"style"} ***!
-  \************************************************************/
+/*!*************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/pages.json?{"type":"style"} ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/acars/acars": { "navigationStyle": "default", "navigationBarTitleText": "ACARS" }, "pages/index/index": { "navigationBarTitleText": "Airmacau" }, "pages/flightSearch/flightSearch": { "navigationStyle": "default", "navigationBarTitleText": "Flight search" }, "pages/flights/flights": { "navigationStyle": "default", "navigationBarTitleText": "Flights" }, "pages/login/login": { "navigationStyle": "custom", "navigationBarTitleText": "登陆" } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#2D2F55", "backgroundColor": "#F8F8F8" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/acars/acars": { "navigationStyle": "default", "navigationBarTitleText": "ACARS", "usingComponents": {} }, "pages/index/index": { "navigationBarTitleText": "Airmacau", "usingComponents": { "i-apis": "/components/apis/i-apis" } }, "pages/flightSearch/flightSearch": { "navigationStyle": "default", "navigationBarTitleText": "Flight search", "usingComponents": {} }, "pages/flights/flights": { "navigationStyle": "default", "navigationBarTitleText": "Flights", "usingComponents": { "ipt-grp": "/components/iptGrp/iptGrp", "i-input": "/components/input/i-input", "uni-calendar": "/components/uni-calendar/uni-calendar", "i-button": "/components/buttons/i-buttons" } }, "pages/login/login": { "navigationStyle": "custom", "navigationBarTitleText": "登陆", "usingComponents": { "i-input": "/components/input/i-input" } } }, "globalStyle": { "navigationBarTextStyle": "white", "navigationBarTitleText": "uni-app", "navigationBarBackgroundColor": "#2D2F55", "backgroundColor": "#F8F8F8" } };exports.default = _default;
 
 /***/ }),
 
 /***/ 8:
-/*!***********************************************************!*\
-  !*** D:/VPJ/airmacau/airmacau/pages.json?{"type":"stat"} ***!
-  \***********************************************************/
+/*!************************************************************************!*\
+  !*** /Users/ianwu/pj/vpj/airmacau/airmacau/pages.json?{"type":"stat"} ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

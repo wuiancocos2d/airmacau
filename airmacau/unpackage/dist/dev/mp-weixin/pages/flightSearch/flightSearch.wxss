@@ -24,14 +24,14 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.flights .background.data-v-6d9caec7 {
+.flights .background.data-v-a48c2b80 {
   display: block;
 }
-.flights .background image.data-v-6d9caec7 {
+.flights .background image.data-v-a48c2b80 {
     width: 100%;
     height: 320rpx;
 }
-.flights .flights-container .flight-list .flight.data-v-6d9caec7 {
+.flights .flights-container .flight-list .flight.data-v-a48c2b80 {
   border: 1px solid #e8e8e8;
   box-sizing: border-box;
   margin: 0;

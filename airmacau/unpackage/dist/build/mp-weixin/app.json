@@ -5,6 +5,11 @@
     "pages/flights/flights",
     "pages/login/login"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取你的位置信息...." 
+   }
+  },
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
@@ -14,4 +19,5 @@
   },
   "usingComponents": {},
   "sitemapLocation": "sitemap.json"
+  
 }
