@@ -1,1 +1,1 @@
-<view id="acars-container" class="data-v-28629c49"><map class="acarsmap data-v-28629c49" name="acarsMap" latitude="{{userLatitude}}" longitude="{{userlongitude}}" scale="{{scale}}" markers="{{marker}}"></map></view>
+<view id="acars-container" class="data-v-28629c49"><map class="acarsmap data-v-28629c49" name="acarsMap" latitude="{{userLatitude}}" longitude="{{userlongitude}}" scale="{{scale}}" markers="{{marker}}" polyline="{{polyline}}"></map></view>
