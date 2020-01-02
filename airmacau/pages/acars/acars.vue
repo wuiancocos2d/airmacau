@@ -1,6 +1,6 @@
 <template>
 	<view id="acars-container">
-		<map name="acarsMap" class="acarsmap" :latitude="userLatitude" :longitude="userlongitude" :scale="scale" :markers="marker" :polyline='polyline' ></map>
+		<map name="acarsMap" class="acarsmap" :latitude="planelatitude" :longitude="planelongitude" :scale="scale" :markers="marker" :polyline='polyline' ></map>
 	</view>
 </template>
 
