@@ -5,6 +5,7 @@
 </template>
 
 <script>
+	import {DistanceByWGS} from '@/js_sdk/function/tools.js'
 	export default {
 		data() {
 			return {
@@ -12,7 +13,7 @@
 				userlongitude: 116.39742,
 				planelatitude: 39.9,
 				planelongitude: 116.39,
-				scale: 5
+				scale: 4
 			}
 		},
 		computed: {
@@ -81,7 +82,8 @@
 					success: function(res) {
 						that.userLatitude = res.latitude
 						that.userlongitude = res.longitude
-						console.log(that.marker)
+						
+						DistanceByWGS(that.userLatitude,that.userlongitude,that.planelatitude,that.planelongitude)
 					}
 				})
 			},
@@ -105,7 +107,7 @@
 	#acars-container {
 		.acarsmap {
 			width: 100%;
-			height: 100vh;
+			height: 80vh;
 		}
 	}
 </style>
