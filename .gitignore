@@ -120,3 +120,4 @@ airmacau/unpackage/dist/dev/.sourcemap/mp-weixin/components/uni-calendar/uni-cal
 airmacau/unpackage/dist/dev/.sourcemap/mp-weixin/pages/acars/acars.js.map
 airmacau/unpackage/dist/dev/mp-weixin/common/vendor.js
 airmacau/unpackage/dist/dev/mp-weixin/components/apis/i-apis.js
+*.map
