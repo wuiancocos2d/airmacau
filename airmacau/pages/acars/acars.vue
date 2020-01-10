@@ -1,6 +1,7 @@
 <template>
 	<view id="acars-container">
 		<map name="acarsMap" class="acarsmap" :latitude="planelatitude" :longitude="planelongitude" :scale="scale" :markers="marker" :polyline='polyline' ></map>
+		<p>{{message}}</p>
 	</view>
 </template>
 
@@ -13,7 +14,8 @@
 				userlongitude: 116.39742,
 				planelatitude: 39.9,
 				planelongitude: 116.39,
-				scale: 4
+				scale: 4,
+				message: ''
 			}
 		},
 		computed: {
@@ -82,7 +84,6 @@
 					success: function(res) {
 						that.userLatitude = res.latitude
 						that.userlongitude = res.longitude
-						
 						DistanceByWGS(that.userLatitude,that.userlongitude,that.planelatitude,that.planelongitude)
 					}
 				})
