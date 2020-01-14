@@ -30,7 +30,9 @@
 				})
 			},
 			goAcars(flt) {
-				console.log('acars',flt)
+				uni.navigateTo({
+					url: './fltDetail'
+				})
 			}
 			
 		}
