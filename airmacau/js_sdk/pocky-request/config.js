@@ -13,7 +13,7 @@ export const globalInterceptor = {
  * `header` 中`content-type`设置特殊参数 或 配置其他会导致触发 跨域 问题，出现跨域会直接进入响应拦截器的catch函数中
  */
 export const config = {
-  baseURL: "https://www.fastmock.site/mock/764b2f2ce8e45de1f04944f04d69a84f/wexin",
+  baseURL: "https://axh.airmacau.com.cn/api/v1/",
   header: {
     // 'X-Auth-Token': 'xxxx',
     contentType: "application/x-www-form-urlencoded"

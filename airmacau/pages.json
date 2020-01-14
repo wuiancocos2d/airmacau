@@ -8,6 +8,9 @@
 			}
 		},
 		{
+			"path": "pages/flights/fltList"
+		},
+		{
 			"path": "pages/acars/acars",
 			"style": {
 				"navigationStyle": "default",

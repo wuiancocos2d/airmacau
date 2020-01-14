@@ -2,20 +2,15 @@
 	<view class="flight-search">
 		<view class="searchForm">
 			<view class="row">
-				<iptGrp :labelNm="'STD From'">
-					<i-input type="text" v-model="stdFrom" :placeholder="today"></i-input>
-				</iptGrp>
-				<iptGrp :labelNm="'STD To'">
-					<i-input type="text" v-model="stdTo" :placeholder="today"></i-input>
+				<iptGrp :labelNm="'Date'">
+					<i-input @focus="openCalendar" type="text" v-model="date" :placeholder="today"></i-input>
 				</iptGrp>
 			</view>
 			<view class="row submitRow">
 				<i-button :type="'company'" @click="submitForm">Search</i-button>
 			</view>
 		</view>
-		<view>
-			<uni-calendar ref="calendar" :insert="insert" :lunar="true" @change="dateChange" @confirm="dateConfirm"></uni-calendar>
-		</view>
+		<uni-calendar ref="calendar" :insert="false" :showMonth="true" @confirm="dateChng" @change="dateChng" />
 	</view>
 </template>
 
@@ -24,6 +19,7 @@
 	import iInput from '@/components/input/i-input.vue'
 	import iButton from '@/components/buttons/i-buttons.vue'
 	import uniCalendar from '@/components/uni-calendar/uni-calendar.vue'
+	import fltAPI from '@/api/flight.js'
 	export default {
 		components: {
 			"iptGrp": IptGrp,
@@ -31,23 +27,44 @@
 			uniCalendar,
 			iButton
 		},
-		data(){
+		data() {
 			return {
-				stdFrom: '',
-				stdTo: '',
-				today: 'today'
+				date: ''
 			}
 		},
 		onLoad() {
 			this.localTime()
 		},
 		methods: {
-			submitForm(){
-				
+			submitForm() {
+				fltAPI.getFltByStdRange(this.date, this.date).then(res => {
+					const fltRsp = JSON.parse(res.data.data.detail)
+					if (fltRsp.success) {
+						const fltList = fltRsp.result
+						uni.setStorage({
+						    key: 'datefltList',
+						    data: fltList,
+						    success: function () {
+								console.log('fltRsp', fltRsp.result)
+						        uni.navigateTo({
+						        	url: '../flights/fltList'
+						        })
+						    }
+						})
+					}
+				}).catch(err => {
+					console.log('fltApi error', err)
+				})
 			},
 			localTime() {
 				const now = new Date()
-				this.today = now.toJSON().slice(0,10).replace(/-/g,'/');
+				this.date = now.toJSON().slice(0, 10).replace(/-/g, '-');
+			},
+			dateChng(newDate) {
+				this.date = newDate.fulldate
+			},
+			openCalendar() {
+				this.$refs.calendar.open()
 			}
 		}
 	}
