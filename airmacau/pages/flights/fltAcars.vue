@@ -1,9 +1,9 @@
 <template>
 	<view id="flight-container">
-		<map name="flightMap" class="fltMap" 
+<!-- 		<map name="flightMap" class="fltMap" 
 		:latitude="depLatitude" :longitude="deplongitude" 
 		:scale="scale" :markers="marker" 
-		:polyline='polyline' ></map>
+		:polyline='polyline' ></map> -->
 	</view>
 </template>
 
@@ -36,7 +36,7 @@
 				}]
 			}
 		},
-		onLoad: {
+		onLoad: function(){
 			this.getDep()
 			this.getMakers()
 		},

@@ -10,7 +10,7 @@
 			</IGrid>
 		</view>
 		<view class="fltLine">
-			<IGrid>
+			<IGrid :iStyle="gridStyle">
 				<iGridItem col="10">
 					<view class="dst">
 						<view>From: {{flt.depApt}}</view>
@@ -24,8 +24,8 @@
 						</view>
 					</view>
 				</iGridItem>
-			</iGrid>
-			<iGrid>
+			</IGrid>
+			<IGrid :iStyle="gridStyle">
 				<iGridItem col="10">
 					<view class="dst">
 						To: {{flt.arrApt}}
@@ -43,8 +43,49 @@
 				</iGridItem>
 			</IGrid>
 		</view>
-		<iview class="tapChng">
-			
+		<iview class="infoBlock">
+			<IGrid>
+				<iGridItem col="2">
+					<view class="infor">
+						Trip Fuel
+					</view>
+					<view class="value">
+						{{flt.tripFuel}}
+					</view>
+				</iGridItem>
+				<iGridItem col="2">
+					<view class="infor">
+						AC Seat
+					</view>
+					<view class="value">
+						{{flt.acSeat}}
+					</view>
+				</iGridItem>
+				<iGridItem col="2">
+					<view class="infor">
+						Jump Seat
+					</view>
+					<view class="value">
+						{{flt.jumpSeat}}
+					</view>
+				</iGridItem>
+				<iGridItem col="2">
+					<view class="infor">
+						Trip Fuel
+					</view>
+					<view class="value">
+						{{flt.tripFuel}}
+					</view>
+				</iGridItem>
+				<iGridItem col="2">
+					<view class="infor">
+						pax Bkg Lf
+					</view>
+					<view class="value">
+						{{flt.paxBkgLf}}
+					</view>
+				</iGridItem>
+			</IGrid>
 		</iview>
 	</view>
 </template>
@@ -67,10 +108,7 @@
 		data() {
 			return {
 				flt: {},
-				times: [
-					"std",
-					"stdL"
-				]
+				gridStyle: {"border-bottom":"1px solid #aaaaaa"}
 			}
 		},
 		onLoad: function() {
@@ -107,6 +145,13 @@
 
 		.time {
 			padding: 0 10px;
+		}
+		.infoBlock {
+			background-color: #007AFF;
+			border-bottom: 1px solid #bdbdbd;
+		}
+		.tapChng {
+			text-align: center;
 		}
 	}
 </style>
