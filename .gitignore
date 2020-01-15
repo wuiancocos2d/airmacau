@@ -121,3 +121,6 @@ airmacau/unpackage/dist/dev/.sourcemap/mp-weixin/pages/acars/acars.js.map
 airmacau/unpackage/dist/dev/mp-weixin/common/vendor.js
 airmacau/unpackage/dist/dev/mp-weixin/components/apis/i-apis.js
 *.map
+*.wxml
+*.wxss
+*.map
