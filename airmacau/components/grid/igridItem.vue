@@ -20,6 +20,7 @@
 	
 	.igrid-item {
 		overflow: hidden;
+		justify-content: space-between;
 		min-height: 1;
 		&.col-1 {
 			width: 10%;
