@@ -30,8 +30,14 @@
 				})
 			},
 			goAcars(flt) {
-				uni.navigateTo({
-					url: './fltDetail'
+				uni.setStorage({
+					key: 'detailFlt',
+					data: flt,
+					success: function(){
+						uni.navigateTo({
+							url: './fltDetail'
+						})
+					}
 				})
 			}
 			

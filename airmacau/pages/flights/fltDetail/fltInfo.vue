@@ -1,7 +1,5 @@
 <template>
 	<view class="detail">
-		<uni-nav-bar color="#fafafa" background-color="#2D2F55" :status-bar="true" left-icon="arrowleft" left-text=" " title="Flight Detail"
-		 @clickLeft="back" />
 		<view class="flight">
 			<IGrid>
 				<iGridItem col="10">
@@ -86,6 +84,48 @@
 					</view>
 				</iGridItem>
 			</IGrid>
+			<IGrid>
+				<iGridItem col="2">
+					<view class="infor">
+						Seat Busi
+					</view>
+					<view class="value">
+						{{flt.seatBusi}}
+					</view>
+				</iGridItem>
+				<iGridItem col="2">
+					<view class="infor">
+						Child
+					</view>
+					<view class="value">
+						{{flt.child}}
+					</view>
+				</iGridItem>
+				<iGridItem col="2">
+					<view class="infor">
+						Door Close
+					</view>
+					<view class="value">
+						{{flt.acDoorClose}}
+					</view>
+				</iGridItem>
+				<iGridItem col="2">
+					<view class="infor">
+						Door Open
+					</view>
+					<view class="value">
+						{{flt.acDoorOpen}}
+					</view>
+				</iGridItem>
+				<iGridItem col="2">
+					<view class="infor">
+						Take off fuel
+					</view>
+					<view class="value">
+						{{flt.takeoffFuel}}
+					</view>
+				</iGridItem>
+			</IGrid>
 		</iview>
 	</view>
 </template>
@@ -93,7 +133,6 @@
 <script>
 	import IGrid from '@/components/grid/igrid.vue'
 	import iGridItem from '@/components/grid/igridItem.vue'
-	import uniNavBar from "@/components/uni-nav-bar/uni-nav-bar.vue"
 	import {
 		fltDetailData
 	} from "@/mock/flight_mock.js"
@@ -101,8 +140,7 @@
 		name: 'FltDetail',
 		components: {
 			IGrid,
-			iGridItem,
-			uniNavBar
+			iGridItem
 		},
 
 		data() {
@@ -111,7 +149,7 @@
 				gridStyle: {"border-bottom":"1px solid #aaaaaa"}
 			}
 		},
-		onLoad: function() {
+		mounted: function() {
 			this.getFltInfo()
 		},
 		methods: {
@@ -122,6 +160,7 @@
 			},
 			getFltInfo() {
 				this.flt = fltDetailData()
+				console.log('flt',flt)
 			}
 		}
 	}
@@ -133,7 +172,7 @@
 			position: relative;
 			top: -1px;
 			font-size: 16px;
-			background-color: #242644;
+			background-color: #1a237e;
 			color: #FFFFFF;
 			padding: 0 15px;
 
