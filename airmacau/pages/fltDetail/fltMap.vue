@@ -8,6 +8,7 @@
 	import {
 		DistanceByWGS
 	} from '@/js_sdk/function/tools.js'
+	import {getFltAcars} from '@/api/flight.js'
 	export default {
 		name: 'FltMap',
 		data() {
@@ -32,6 +33,20 @@
 				}]
 			}
 		},
+		methods: {
+			getAcars() {
+				uni.getStorage({
+					key: 'detailFlt',
+					success:function(res){
+						
+					}
+				})
+			},
+			acarsByAC(acId) {
+				
+				getFltAcars(acId)
+			}
+		}
 	}
 </script>
 

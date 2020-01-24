@@ -5,5 +5,10 @@ export default {
 		return Request().get('/b2eflightinfo/getflightinfoByStdRange',{
 			data: {'stdFrom':stdFrom, 'stdTo':stdTo}
 		})
+	},
+	getFltAcars(acId,msgTimeFromUtc , msgTimeToUtc ) {
+		return Request().get('/acars/getAcPosByUTC',{
+			data: {'acId':acId,'stdFrom':stdFrom, 'stdTo':stdTo}
+		})
 	}
 }
