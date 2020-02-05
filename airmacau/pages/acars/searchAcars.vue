@@ -19,7 +19,7 @@
 	import iInput from '@/components/input/i-input.vue'
 	import iButton from '@/components/buttons/i-buttons.vue'
 	import uniCalendar from '@/components/uni-calendar/uni-calendar.vue'
-	import fltAPI from '@/api/flight.js'
+	import {getFltByStdRange} from '@/api/flight.js'
 	export default {
 		components: {
 			"iptGrp": IptGrp,
@@ -37,7 +37,7 @@
 		},
 		methods: {
 			submitForm() {
-				fltAPI.getFltByStdRange(this.date, this.date).then(res => {
+				getFltByStdRange(this.date, this.date).then(res => {
 					const fltRsp = JSON.parse(res.data.data.detail)
 					if (fltRsp.success) {
 						const fltList = fltRsp.result

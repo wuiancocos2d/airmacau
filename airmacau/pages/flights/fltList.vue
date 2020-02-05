@@ -35,7 +35,10 @@
 					data: flt,
 					success: function(){
 						uni.navigateTo({
-							url: './fltDetail'
+							url: '../fltDetail/fltDetail',
+							fail: function(err){
+								console.log('nav detail error',err)
+							}
 						})
 					}
 				})

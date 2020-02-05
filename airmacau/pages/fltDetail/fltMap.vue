@@ -33,18 +33,33 @@
 				}]
 			}
 		},
+		mounted: function() {
+			this.getAcars()
+		},
 		methods: {
 			getAcars() {
+				const that = this
 				uni.getStorage({
 					key: 'detailFlt',
 					success:function(res){
-						
+						console.log('res data',res.data)
+						that.acarsByAC(res.data)
+					},
+					fail: function(err){
+						console.log('map get Acars error',err)
 					}
 				})
+				console.log('getAcars')
 			},
-			acarsByAC(acId) {
-				
-				getFltAcars(acId)
+			acarsByAC(flt) {
+				const now = 
+				getFltAcars(flt.acId,flt.std,flt.sta).then(
+					res => {
+						console.log('res',res)
+					}
+				).catch(err=> {
+					console.log('err',err)
+				})
 			}
 		}
 	}
