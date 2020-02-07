@@ -136,6 +136,7 @@
 	import {
 		fltDetailData
 	} from "@/mock/flight_mock.js"
+	import {getflightinfoByFltPk} from '@/api/flight.js'
 	export default {
 		name: 'FltDetail',
 		components: {
@@ -159,8 +160,23 @@
 				})
 			},
 			getFltInfo() {
-				this.flt = fltDetailData()
-				console.log('flt',flt)
+				const that = this
+				uni.getStorage({
+					key: 'detailFlt',
+					success:function(res){
+						console.log(' data fltPk',res.data.fltPk)
+						getflightinfoByFltPk(res.data.fltPk).then(
+							fltRes => {
+								that.flt = JSON.parse(fltRes.data.data.detail).result
+							}
+						).catch(err=> {
+							console.log('getflightinfoByFltPk err',err)
+						})
+					},
+					fail: function(err){
+						console.log('getFltInfo key detailFlt erro ',err)
+					}
+				})
 			}
 		}
 	}

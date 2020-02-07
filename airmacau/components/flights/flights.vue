@@ -4,17 +4,20 @@
 			<view class="fltId prop">
 				ID
 			</view>
-			<view class="acId prop">
+<!-- 			<view class="acId prop">
 				ACID
-			</view>
+			</view> -->
 			<view class="depApt prop">
 				DEP
 			</view>
 			<view class="arrApt prop">
 				ARR
 			</view>
-			<view class="sta prop">
+			<view class="std prop">
 				STD
+			</view>			
+			<view class="sta prop">
+				STA
 			</view>
 			<view class="eta prop">
 				ETA

@@ -52,6 +52,11 @@
 				if (this.current !== e.currentIndex) {
 					this.current = e.currentIndex;
 				}
+			},
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
 			}
 		}
 	}

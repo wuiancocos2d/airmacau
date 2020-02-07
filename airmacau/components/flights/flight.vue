@@ -3,15 +3,21 @@
 		<view class="fltId prop">
 			{{flight.fltId}}
 		</view>
-		<view class="acId prop">
+<!-- 		<view class="acId prop">
 			{{flight.acId}}
-		</view>
+		</view> -->
 		<view class="depApt prop">
 			{{flight.depApt}}
 		</view>
 		<view class="arrApt prop">
 			{{flight.arrApt}}
 		</view>
+		<view class="std prop">
+			<view v-if="standTime">{{flight.std.slice(10, 16)}}</view>
+			<view v-else>
+				{{flight.stdLocal.slice(10, 16)}}
+			</view>
+		</view>		
 		<view class="sta prop">
 			<view v-if="standTime">{{flight.sta.slice(10, 16)}}</view>
 			<view v-else>
