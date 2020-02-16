@@ -1,6 +1,17 @@
 <template>
 	<view id="flight-container">
-		<map name="flightMap" class="fltMap" :latitude="fltJD" :longitude="fltWD" :scale="scale" :markers="marker" :polyline='polyline'></map>
+		<map v-if="loaded" name="flightMap" class="fltMap" :latitude="fltJD" :longitude="fltWD" :scale="scale" :markers="marker"
+		 :polyline='polyline'></map>
+		<view v-if="modalName === 'Image'" class="bg-img bg-mask flex align-center" :style="{backgroundImage: 'url('+bg+');height: 414upx;'}">
+					<view class="padding-xl text-white">
+						<view class="padding-xs text-xxl text-bold">
+							No Acars Data
+						</view>
+						<view class="padding-xs text-lg">
+							
+						</view>
+					</view>
+				</view>
 	</view>
 </template>
 
@@ -8,18 +19,29 @@
 	import {
 		DistanceByWGS
 	} from '@/js_sdk/function/tools.js'
-	import {getFltAcars} from '@/api/flight.js'
+	import {
+		getFltAcars
+	} from '@/api/flight.js'
+	import {
+		mapState,
+		mapActions
+	} from 'vuex'
+	import Bg from '@/static/empty.jpg'
 	export default {
 		name: 'FltMap',
 		data() {
 			return {
+				bg: Bg,
 				fltJD: '',
 				fltWD: '',
 				scale: 5,
-				markers: []
+				markers: [],
+				loaded: false,
+				modalName: null
 			}
 		},
 		computed: {
+			...mapState('flight', ['checkFlt']),
 			polyline() {
 				return [{ //指定一系列坐标点，从数组第一项连线至最后一项
 					points: [{
@@ -37,29 +59,30 @@
 			this.getAcars()
 		},
 		methods: {
+			...mapActions('flight', ['change_checkFlt']),
 			getAcars() {
-				const that = this
-				uni.getStorage({
-					key: 'detailFlt',
-					success:function(res){
-						console.log('res data',res.data)
-						that.acarsByAC(res.data)
-					},
-					fail: function(err){
-						console.log('map get Acars error',err)
-					}
-				})
-				console.log('getAcars')
+				this.acarsByAC(this.checkFlt)
 			},
 			acarsByAC(flt) {
-				const now = 
-				getFltAcars(flt.acId,flt.std,flt.sta).then(
-					res => {
-						console.log('res',res)
-					}
-				).catch(err=> {
-					console.log('err',err)
-				})
+				const that = this
+					getFltAcars(flt.acId, flt.std, flt.sta).then(
+						res => {
+							if(res.success) {
+								that.markers = res.result
+								console.log('markeses ',res)
+								if(that.markers.length === 0) {
+									that.modalName = 'Image'
+								}else {
+									that.loaded = true
+								}
+							}
+						}
+					).catch(err => {
+						console.log('err', err)
+					})
+			},
+			hideModal(e) {
+				this.modalName = null
 			}
 		}
 	}

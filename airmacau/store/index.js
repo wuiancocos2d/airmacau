@@ -1,24 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import actions from './action.js'
-import mutations from './mutations.js'
+import flight from './flight'
+import user from './user'
+
+// import music from './modules/music'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-	state: {
-		/**
-		 * 是否需要强制登录
-		 */
-		forcedLogin: false,
-		hasLogin: false,
-		userInfo: {}
-	},
-	actions:actions,
-	mutations:mutations
+  modules: {
+    user: {
+      namespaced: true,
+      ...user
+    },
+    flight: {
+      namespaced: true,
+      ...flight
+    }
+  }
 })
 
 export default store
-
-

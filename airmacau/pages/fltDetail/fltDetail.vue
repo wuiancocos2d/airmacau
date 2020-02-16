@@ -1,66 +1,57 @@
 <template>
-	<view>
-		<uni-nav-bar color="#fafafa" background-color="#2D2F55" :status-bar="true" left-icon="arrowleft" left-text=" " title="Flight Info"
-		 @clickLeft="back" />
-		<uni-segmented-control :current="current" :values="items" @clickItem="onClickItem" style-type="text" active-color="#2D2F55"></uni-segmented-control>
+	<view class="am_light_bg">
+		<amNav :title="'Flight'"></amNav>
 		<view class="content">
-			<view v-show="current === 0">
-				<FltInfo></FltInfo>
-			</view>
-			<view v-show="current === 1">
-				<FltMap></FltMap>
+			<FltInfo></FltInfo>
+		</view>
+		<view class="box bottomNav">
+			<view class="cu-bar tabbar bg-white">
+				<view class="action" v-for="(item,index) in actions" :key="index" @tap="goAction(item.url)">
+					<view class="cuIcon-cu-image">
+						<image :src="item.logo"></image>
+					</view>
+					<view class="text-black">{{item.name}}</view>
+				</view>
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
-	import uniSegmentedControl from "@/components/uni-segmented-control/uni-segmented-control.vue"
-	import uniNavBar from "@/components/uni-nav-bar/uni-nav-bar.vue"
 	import FltInfo from './fltInfo.vue'
-	import FltMap from './fltMap.vue'
+	import crewImg from '@/static/icons/crews.svg'
+	import mapImg from '@/static/icons/map.svg'
 	export default {
 		components: {
-			uniSegmentedControl,
-			uniNavBar,
-			FltInfo,
-			FltMap
+			FltInfo
 		},
 		data() {
 			return {
-				
-				items: ['Info', 'Map'],
-				current: 0
+				currentTabComponent: 'FltInfo',
+				tabs: ['Info', 'Acars', 'Passenger'],
+				crewImg: crewImg,
+				mapImg: mapImg,
+				actions: [
+					{'name':'Crews','url':'@/pages/fltInfo/fltInfo','logo':crewImg},
+					{'name':'Acars','url':'@/pages/fltMap/fltAcars','logo':mapImg}
+				]
 			}
 		},
 		computed: {
-			polyline() {
-				return [{ //指定一系列坐标点，从数组第一项连线至最后一项
-					points: [{
-							latitude: this.depLatitude,
-							longitude: this.deplongitude
-						}].concat(this.markers),
-					color: "#0000AA", //线的颜色
-					width: 2, //线的宽度
-					dottedLine: true, //是否虚线
-					arrowLine: true, //带箭头的线 开发者工具暂不支持该属性
-				}]
-			}
+
 		},
 		methods: {
-			onClickItem(e) {
-				if (this.current !== e.currentIndex) {
-					this.current = e.currentIndex;
-				}
-			},
-			back() {
-				uni.navigateBack({
-					delta: 1
-				})
+			goAction: function(url){
+				console.log('url',url)
 			}
 		}
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
+	.bottomNav {
+		position: fixed;
+		width: 100vw;
+		bottom: 0;
+	}
 </style>

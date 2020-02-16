@@ -1,74 +1,58 @@
 <template>
 	<view class="flight-search">
-		<view class="searchForm">
-			<view class="row">
-				<iptGrp :labelNm="'Date'">
-					<i-input @focus="openCalendar" type="text" v-model="date" :placeholder="today"></i-input>
-				</iptGrp>
+		<Ticket subName='Search' :spin="spin" :hasSub="true" @subTab="submitForm">
+			<view class="searchForm">
+				<view class="cu-form-group">
+					<view class="title">Flight Date</view>
+					<picker mode="date" :value="date" start="2015-09-01" end="2020-09-01" @change="DateChange">
+						<view class="picker">
+							{{date}}
+						</view>
+					</picker>
+				</view>
 			</view>
-			<view class="row submitRow">
-				<i-button :type="'company'" @click="submitForm">Search</i-button>
-			</view>
-		</view>
-		<uni-calendar ref="calendar" :insert="false" :showMonth="true" @confirm="dateChng" @change="dateChng" />
+		</Ticket>
 	</view>
 </template>
 
 <script>
-	import IptGrp from '@/components/iptGrp/iptGrp.vue'
-	import iInput from '@/components/input/i-input.vue'
-	import iButton from '@/components/buttons/i-buttons.vue'
-	import uniCalendar from '@/components/uni-calendar/uni-calendar.vue'
-	import {getFltByStdRange} from '@/api/flight.js'
+	import Ticket from '@/components/ticket/ticket.vue'
+	import {mapActions} from 'vuex'
 	export default {
 		components: {
-			"iptGrp": IptGrp,
-			iInput,
-			uniCalendar,
-			iButton
+			Ticket
 		},
 		data() {
 			return {
-				date: ''
+				date: '',
+				spin: false
 			}
 		},
 		onLoad() {
 			this.localTime()
 		},
 		methods: {
+			...mapActions('flight',['change_fltDate']),
 			submitForm() {
-				getFltByStdRange(this.date, this.date).then(res => {
-					const fltRsp = JSON.parse(res.data.data.detail)
-					if (fltRsp.success) {
-						const fltList = fltRsp.result
-						uni.setStorage({
-						    key: 'datefltList',
-						    data: fltList,
-						    success: function () {
-								console.log('fltRsp', fltRsp.result)
-						        uni.navigateTo({
-						        	url: '../flights/fltList'
-						        })
-						    }
-						})
-					}
-				}).catch(err => {
-					console.log('fltApi error', err)
+				this.change_fltDate(this.date)
+				uni.navigateTo({
+					url: '../flights/fltList'
 				})
 			},
 			localTime() {
 				const now = new Date()
 				this.date = now.toJSON().slice(0, 10).replace(/-/g, '-');
 			},
-			dateChng(newDate) {
-				this.date = newDate.fulldate
-			},
-			openCalendar() {
-				this.$refs.calendar.open()
+			DateChange(e) {
+				this.date = e.detail.value
 			}
 		}
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
+	.flight-search {
+		padding-top: 100px;
+		background-color: #F2F2F2;
+	}
 </style>

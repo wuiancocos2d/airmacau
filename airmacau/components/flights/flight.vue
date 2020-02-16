@@ -1,37 +1,7 @@
 <template>
-	<view class="flight" @tap="handleTap">
-		<view class="fltId prop">
-			{{flight.fltId}}
-		</view>
-<!-- 		<view class="acId prop">
-			{{flight.acId}}
-		</view> -->
-		<view class="depApt prop">
-			{{flight.depApt}}
-		</view>
-		<view class="arrApt prop">
-			{{flight.arrApt}}
-		</view>
-		<view class="std prop">
-			<view v-if="standTime">{{flight.std.slice(10, 16)}}</view>
-			<view v-else>
-				{{flight.stdLocal.slice(10, 16)}}
-			</view>
-		</view>		
-		<view class="sta prop">
-			<view v-if="standTime">{{flight.sta.slice(10, 16)}}</view>
-			<view v-else>
-				{{flight.staLocal.slice(10, 16)}}
-			</view>
-		</view>
-		<view class="eta prop">
-			<view v-if="standTime">{{flight.eta.slice(10, 16)}}</view>
-			<view v-else>
-				{{flight.etaLocal.slice(10,16)}}
-			</view>
-		</view>
-		<view class="state prop">
-			{{flight.fltStatusName}}
+	<view class="flight am_light_bg flex" @tap="handleTap">
+		<view v-for="(item,index) in cells" :key="index"  class="flt prop flex-sub" :class="darkBg? 'am_light_bg':'am_white_bg'">
+			{{flt[item]}}
 		</view>
 	</view>
 </template>
@@ -46,6 +16,31 @@
 			standTime: {
 				type: Boolean,
 				default: true
+			},
+			darkBg: {
+				type: Boolean,
+				default: false
+			}
+		},
+		data() {
+			return {
+				cells : ['fltId','depApt','arrApt','std','sta','eta','fltStatusName'],
+				sliceItem: ['std','sta','eta']
+			}			
+		},
+		computed: {
+			flt: function(){
+				let flt = Object.assign({},this.flight)
+				if(this.standTime) {
+					this.sliceItem.forEach((item)=>{
+						flt[item] = flt[item] ? flt[item].slice(10,16) : '--:--'
+					})
+				}else {
+					this.sliceItem.forEach((item)=>{
+						flt[item] = flt[item] ? flt[item+'Local'].slice(10,16): '--:--'
+					})
+				}
+				return flt
 			}
 		},
 		methods: {
@@ -57,5 +52,20 @@
 </script>
 
 <style lang="scss" scoped>
-	@import './flights.css'
+	@import '../../common/color';
+	.flight {
+		position: relative;
+		.flt {
+			flex: 0 0 100%; 
+			box-sizing: border-box;
+			white-space: nowrap;
+			font-size: 14px;
+			line-height: 28px;
+			flex-grow: 1;
+			flex-shrink: 0;
+			flex-basis: 0;
+			text-align: center;
+			color: $am_black_font;
+		}
+	}
 </style>
