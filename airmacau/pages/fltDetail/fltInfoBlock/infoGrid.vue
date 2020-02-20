@@ -1,5 +1,18 @@
 <template>
-	<view class="grid margin-bottom text-center"  :class="'col-' + ">
+	<view  class="{block: isBlock}">
+		<view class="dviding" v-if="dividing"></view>
+		<view>
+			<view class="grid margin-bottom text-center" :class="'col-' + colNum ">
+				<view class="infoGrp" v-for="(item,index) in data" :key="index">
+					<view class="title am_normal_font">
+						{{item.name}}:
+					</view>
+					<view class="value am_theme_font">
+						{{item.value}}
+					</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -7,12 +20,39 @@
 	export default {
 		name: 'InfoGrid',
 		props: {
-			infos: {
-				type: ''
+			col: {
+				type: Number,
+				default: function() {
+					return 1
+				}
+			},
+			dividing: {
+				type: Boolean,
+				default: false
+			},
+			isBlock: {
+				type: Boolean,
+				default: true
+			},
+			data: {
+				type: Array,
+				default: function() {
+					return []
+				}
+			}
+		},
+		computed: {
+			colNum() {
+				return this.col
 			}
 		}
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
+	.infoGrp {
+		&:first-child {
+			text-align: left;
+		}
+	}
 </style>

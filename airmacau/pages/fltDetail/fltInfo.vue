@@ -2,7 +2,10 @@
 	<view class="detail">
 		<view class="flight">
 			<Ticket>
-				<Location :flt="checkFlt"></Location>
+				<Location :flt="checkFlt"></Location>			
+			</Ticket>
+			<Ticket>
+				
 			</Ticket>
 		</view>
 	</view>
@@ -11,6 +14,7 @@
 <script>
 	import Ticket from '@/components/ticket/ticket.vue'
 	import Location from './fltInfoBlock/Location.vue'
+	import InfoGrid from './fltInfoBlock/infoGrid.vue'
 	import {
 		fltDetailData
 	} from "@/mock/flight_mock.js"
@@ -45,6 +49,12 @@
 				uni.navigateBack({
 					delta: 1
 				})
+			},
+			filterInfos (flt,infos) {
+				infos.forEach((element) => {
+					element.value = flt[element.vn] ? flt[element.vn] : '---'
+				})
+				return infos
 			}
 		}
 	}
