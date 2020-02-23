@@ -1,16 +1,16 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/fltDetail/fltDetail",
-			"style": {
-				"navigationStyle":"custom",
-				"navigationBarTitleText":"Flight Detail"
-			}
-		},{
 			"path": "pages/acars/searchAcars",
 			"style": {
 				"navigationStyle":"default",
 				"navigationBarTitleText":"Search"
+			}
+		},{
+			"path": "pages/fltDetail/fltDetail",
+			"style": {
+				"navigationStyle":"custom",
+				"navigationBarTitleText":"Flight Detail"
 			}
 		},{
 			"path": "pages/index/index",
@@ -27,19 +27,19 @@
 			}
 		},
 		{
+			"path": "pages/fltMap/fltMap",
+			"style": {
+				"navigationStyle":"default",
+				"navigationBarTitleText":"Acars Map"
+			}
+		},
+		{
 			"path": "pages/acars/acars",
 			"style": {
 				"navigationStyle": "default",
 				"navigationBarTitleText": "ACARS"
 			}
 		}, 
-		{
-			"path": "pages/flightSearch/flightSearch",
-			"style": {
-				"navigationStyle": "default",
-				"navigationBarTitleText": "Flight search"
-			}
-		},
 		{
 			"path": "pages/flights/flights",
 			"style": {

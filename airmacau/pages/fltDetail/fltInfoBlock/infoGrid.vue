@@ -3,7 +3,7 @@
 		<view class="dviding" v-if="dividing"></view>
 		<view>
 			<view class="grid margin-bottom text-center" :class="'col-' + colNum ">
-				<view class="infoGrp" v-for="(item,index) in data" :key="index">
+				<view class="infoGrp" v-for="(item,index) in fdata" :key="index">
 					<view class="title am_normal_font">
 						{{item.name}}:
 					</view>
@@ -34,11 +34,15 @@
 				type: Boolean,
 				default: true
 			},
-			data: {
+			fdata: {
 				type: Array,
 				default: function() {
 					return []
 				}
+			},
+			fLeft: {
+				type: Boolean,
+				default: false
 			}
 		},
 		computed: {
@@ -51,8 +55,6 @@
 
 <style lang="scss" scoped>
 	.infoGrp {
-		&:first-child {
-			text-align: left;
-		}
+
 	}
 </style>
