@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import flight from './flight'
 import user from './user'
+import tele from './tele/teleStore.js'
 
 // import music from './modules/music'
 
